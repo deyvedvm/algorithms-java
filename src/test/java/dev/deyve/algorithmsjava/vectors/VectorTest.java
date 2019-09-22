@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Vector Test
+ */
 class VectorTest {
 
     private Vector<Object> vector;
@@ -160,7 +163,6 @@ class VectorTest {
         vector.remove(1);
 
         assertEquals(vector.getElements()[1], third);
-
     }
 
 
@@ -176,7 +178,6 @@ class VectorTest {
         vector.remove(second);
 
         assertEquals(vector.getElements()[1], third);
-
     }
 
     @Test

@@ -7,7 +7,6 @@ import java.util.stream.IntStream;
 /**
  * Vector
  */
-
 public class Vector<T> {
 
     @Getter
