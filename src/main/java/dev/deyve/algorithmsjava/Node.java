@@ -1,5 +1,8 @@
 package dev.deyve.algorithmsjava;
 
+/**
+ * Node
+ */
 public class Node {
 
     protected Integer value;

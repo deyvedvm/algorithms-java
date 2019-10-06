@@ -1,5 +1,8 @@
 package dev.deyve.algorithmsjava;
 
+/**
+ * Tree
+ */
 public class Tree {
 
     private Node root;
