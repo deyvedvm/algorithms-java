@@ -1,5 +1,6 @@
-package dev.deyve.algorithmsjava;
+package dev.deyve.algorithmsjava.trees;
 
+import dev.deyve.algorithmsjava.trees.Tree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

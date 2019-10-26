@@ -1,4 +1,4 @@
-package dev.deyve.algorithmsjava;
+package dev.deyve.algorithmsjava.trees;
 
 /**
  * Tree
