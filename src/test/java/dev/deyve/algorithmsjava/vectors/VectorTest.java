@@ -13,40 +13,46 @@ class VectorTest {
 
     private Vector<Object> vector;
 
-    private String first = "first";
-    private String second = "second";
-    private String third = "third";
-    private String fourth = "fourth";
+    private String first;
+    private String second;
+    private String third;
+    private String fourth;
 
     @BeforeEach
     void setUp() {
         this.vector = new Vector<>(3);
+
+        first = "first";
+        second = "second";
+        third = "third";
+        fourth = "fourth";
     }
 
     @Test
-    @DisplayName("Should Create a Vector With Three Elements")
-    void shouldCreateVectorWithThreeElements() {
+    @DisplayName("Should Check the length of the vector")
+    void ShouldCheckTheLengthOfTheVector() {
 
         assertEquals(vector.getElements().length, 3);
     }
 
     @Test
-    @DisplayName("Should Add Element To Vector")
-    void shouldAddElementToVector() {
+    @DisplayName("Should add Element to Vector and increase the length of the vector")
+    void shouldAddElementToVectorAndIncreasesTheLength() {
 
         vector.add(first);
         vector.add(second);
         vector.add(third);
 
-        boolean add = vector.add(fourth);
+        boolean added = vector.add(fourth);
+
+        assertTrue(added);
 
         assertEquals(vector.getElements().length, 6);
 
         assertEquals(vector.getElements()[0], first);
         assertEquals(vector.getElements()[1], second);
         assertEquals(vector.getElements()[2], third);
-
-        assertTrue(add);
+        assertEquals(vector.getElements()[3], fourth);
     }
 
     @Test
@@ -61,8 +67,16 @@ class VectorTest {
         assertTrue(added);
 
         assertEquals(vector.getElements()[0], first);
+    }
 
-        assertThrows(IllegalArgumentException.class, () -> vector.add(3, fourth));
+    @Test
+    @DisplayName("Should Throws an IllegalArgumentException When an Add Element")
+    void shouldThrowsExceptionWhenAddElement() {
+
+        vector.add(first);
+        vector.add(second);
+
+        assertThrows(IllegalArgumentException.class, () -> vector.add( 2, third));
     }
 
     @Test
@@ -89,6 +103,14 @@ class VectorTest {
 
         Object secondElement = vector.find(1);
         assertEquals(secondElement, second);
+    }
+
+    @Test
+    @DisplayName("Should Throws Exception when find an Element by Position")
+    void shouldFindElementByPositionAndThrowsException() {
+
+        vector.add(first);
+        vector.add(second);
 
         assertThrows(IllegalArgumentException.class, () -> vector.find(2));
     }
@@ -135,20 +157,6 @@ class VectorTest {
         assertTrue(containsSecond);
 
         assertFalse(containsThird);
-    }
-
-    @Test
-    @DisplayName("Should Increases Capacity of Vector")
-    void shouldIncreasesCapacity() {
-
-        assertEquals(vector.getElements().length, 3);
-
-        vector.add(first);
-        vector.add(second);
-        vector.add(third);
-        vector.add(fourth);
-
-        assertEquals(vector.getElements().length, 6);
     }
 
     @Test
