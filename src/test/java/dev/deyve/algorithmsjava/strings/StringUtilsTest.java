@@ -25,9 +25,9 @@ class StringUtilsTest {
 
         Map<Character, Integer> result = stringUtils.countingDuplicateCharacters(mockString);
 
-        Map<Character, Integer> expetedResult = Map.of('a', 2, 'b', 2, 'c', 1);
+        Map<Character, Integer> expectedResult = Map.of('a', 2, 'b', 2, 'c', 1);
 
-        assertEquals(result, expetedResult);
+        assertEquals(result, expectedResult);
     }
 
     @Test
@@ -38,8 +38,35 @@ class StringUtilsTest {
 
         Map<Character, Long> result = stringUtils.countDuplicateCharactersStream(mockString);
 
-        Map<Character, Long> expetedResult = Map.of('a', 2L, 'b', 2L, 'c', 1L);
+        Map<Character, Long> expectedResult = Map.of('a', 2L, 'b', 2L, 'c', 1L);
 
-        assertEquals(result, expetedResult);
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Finding the first non-repeated character; return character")
+    public void firstNonRepeatedCharacterTest() {
+
+        String mockString = "David";
+
+        Character result = stringUtils.firstNonRepeatedCharacter(mockString);
+
+        Character expectedResult = 'D';
+
+        assertEquals(result, expectedResult);
+    }
+
+
+    @Test
+    @DisplayName("StringUtils; Finding the first non-repeated character using LinkedHashMap; return character")
+    public void firstNonRepeatedCharacterLinkedHashMapTest() {
+
+        String mockString = "David";
+
+        Character result = stringUtils.firstNonRepeatedCharacterLinkedHashMap(mockString);
+
+        Character expectedResult = 'D';
+
+        assertEquals(result, expectedResult);
     }
 }
