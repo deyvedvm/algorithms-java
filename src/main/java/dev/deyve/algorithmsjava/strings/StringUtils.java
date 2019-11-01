@@ -3,12 +3,17 @@ package dev.deyve.algorithmsjava.strings;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class StringUtils {
 
     private static final int EXTENDED_ASCII_CODES = 256;
+
+    private static final String WHITESPACE = " ";
+
+    private static final Pattern PATTERN = Pattern.compile(" +");
 
     /**
      * Counting Duplicate Characters
@@ -110,4 +115,42 @@ public class StringUtils {
         return Character.MIN_VALUE;
     }
 
+    /**
+     * Reversing letters and words
+     *
+     * @param str String
+     * @return Reversed String
+     */
+    public String reverseWords(String str) {
+
+        String[] words = str.split(WHITESPACE);
+
+        StringBuilder reversedString = new StringBuilder();
+
+        for (String word : words) {
+
+            StringBuilder reverseWord = new StringBuilder();
+
+            for (int index = word.length() - 1; index >= 0; index--) {
+                reverseWord.append(word.charAt(index));
+            }
+
+            reversedString.append(reverseWord).append(WHITESPACE);
+        }
+
+        return reversedString.toString();
+    }
+
+    /**
+     * Reversing letters and words functional style
+     *
+     * @param str String
+     * @return Reversed String
+     */
+    public String reverseWordsFunctionalStyle(String str) {
+
+        return PATTERN.splitAsStream(str)
+                .map(word -> new StringBuilder(word).reverse())
+                .collect(Collectors.joining(" "));
+    }
 }

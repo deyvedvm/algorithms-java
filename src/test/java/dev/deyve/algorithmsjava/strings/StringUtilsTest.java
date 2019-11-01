@@ -69,4 +69,32 @@ class StringUtilsTest {
 
         assertEquals(result, expectedResult);
     }
+
+    @Test
+    @DisplayName("StringUtils; Reversing letters and words; return reversed string")
+    public void reverseWordsTest() {
+
+        String mockString = "Ragnar Lothbrok";
+
+        String result = stringUtils.reverseWords(mockString);
+
+        String expectedResult = "rangaR korbhtoL ";
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Reversing letters and words functional style; return reversed string")
+    public void reverseWordsFunctionalStyleTest() {
+
+        String mockString = "Ragnar Lothbrok";
+
+        String result = stringUtils.reverseWordsFunctionalStyle(mockString);
+
+        String expectedResult = "rangaR korbhtoL";
+
+        assertEquals(result, expectedResult);
+    }
+
+
 }
