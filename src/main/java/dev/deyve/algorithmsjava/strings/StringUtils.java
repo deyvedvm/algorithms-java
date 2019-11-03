@@ -153,4 +153,18 @@ public class StringUtils {
                 .map(word -> new StringBuilder(word).reverse())
                 .collect(Collectors.joining(" "));
     }
+
+    /**
+     * Checking whether a string contains only digits
+     *
+     * @param str String
+     * @return boolean
+     */
+    public boolean checkingWhetherStringContainsOnlyDigits(String str) {
+
+        // Other solution is using regular expression
+        // return str.matches("[0-9]+");
+
+        return str.chars().allMatch(Character::isDigit);
+    }
 }

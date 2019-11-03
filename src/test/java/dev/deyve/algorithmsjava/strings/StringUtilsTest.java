@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
 
@@ -94,6 +94,20 @@ class StringUtilsTest {
         String expectedResult = "rangaR korbhtoL";
 
         assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string contains only digits; return boolean")
+    public void checkingWhetherStringContainsOnlyDigitsTest() {
+
+        String mockDigits = "2019";
+        String mockDigitsWithChar = "2019a";
+
+        boolean resultDigits = stringUtils.checkingWhetherStringContainsOnlyDigits(mockDigits);
+        boolean resultDigitsWithChar = stringUtils.checkingWhetherStringContainsOnlyDigits(mockDigitsWithChar);
+
+        assertTrue(resultDigits);
+        assertFalse(resultDigitsWithChar);
     }
 
 
