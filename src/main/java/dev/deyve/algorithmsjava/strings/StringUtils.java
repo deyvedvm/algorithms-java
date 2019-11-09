@@ -1,8 +1,6 @@
 package dev.deyve.algorithmsjava.strings;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -14,6 +12,8 @@ public class StringUtils {
     private static final String WHITESPACE = " ";
 
     private static final Pattern PATTERN = Pattern.compile(" +");
+
+    public static final Set<Character> allVowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
 
     /**
      * Counting Duplicate Characters
@@ -166,5 +166,53 @@ public class StringUtils {
         // return str.matches("[0-9]+");
 
         return str.chars().allMatch(Character::isDigit);
+    }
+
+    /**
+     * Counting vowels and consonants
+     *
+     * @param str String
+     * @return Map of String and Integer
+     */
+    public Map<String, Integer> countVowelsAndConsonants(String str) {
+
+        str = str.toLowerCase();
+
+        int vowels = 0;
+        int consonants = 0;
+
+        for (int index = 0; index < str.length(); index++) {
+            char charAt = str.charAt(index);
+
+            if (allVowels.contains(charAt)) {
+                vowels++;
+            } else if (charAt >= 'a' && charAt <= 'z') {
+                consonants++;
+            }
+        }
+
+        return Map.of("vowels", vowels, "consonants", consonants);
+    }
+
+    /**
+     * Counting vowels and consonants functional style
+     *
+     * @param str String
+     * @return Map of String and Long
+     */
+    public Map<String, Long> countVowelsAndConsonantsFunctionalStyle(String str) {
+
+        str = str.toLowerCase();
+
+        long vowels = str.chars()
+                .filter(charAt -> allVowels.contains((char) charAt))
+                .count();
+
+        long consonants = str.chars()
+                .filter(c -> !allVowels.contains((char) c))
+                .filter(ch -> (ch >= 'a' && ch <= 'z'))
+                .count();
+
+        return Map.of("vowels", vowels, "consonants", consonants);
     }
 }

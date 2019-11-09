@@ -110,5 +110,29 @@ class StringUtilsTest {
         assertFalse(resultDigitsWithChar);
     }
 
+    @Test
+    @DisplayName("StringUtils; Counting vowels and consonants; return Map of String and Integer")
+    public void countVowelsAndConsonantsTest() {
 
+        String mockString = "Vieira";
+
+        Map<String, Integer> result = stringUtils.countVowelsAndConsonants(mockString);
+
+        Map<String, Integer> expectedResult = Map.of("vowels", 4, "consonants", 2);
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Counting vowels and consonants functional style; return Map of String and Long")
+    public void countVowelsAndConsonantsFunctionalStyle() {
+
+        String mockString = "Vieira";
+
+        Map<String, Long> result = stringUtils.countVowelsAndConsonantsFunctionalStyle(mockString);
+
+        Map<String, Long> expectedResult = Map.of("vowels", 4L, "consonants", 2L);
+
+        assertEquals(result, expectedResult);
+    }
 }
