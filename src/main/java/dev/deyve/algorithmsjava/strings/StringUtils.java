@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class StringUtils {
+class StringUtils {
 
     private static final int EXTENDED_ASCII_CODES = 256;
 
@@ -13,7 +13,7 @@ public class StringUtils {
 
     private static final Pattern PATTERN = Pattern.compile(" +");
 
-    public static final Set<Character> allVowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+    private static final Set<Character> allVowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
 
     /**
      * Counting Duplicate Characters
@@ -21,7 +21,7 @@ public class StringUtils {
      * @param str String
      * @return Map with Character and number of occurrences
      */
-    public Map<Character, Integer> countingDuplicateCharacters(String str) {
+    Map<Character, Integer> countingDuplicateCharacters(String str) {
 
         Map<Character, Integer> result = new HashMap<>();
 
@@ -43,7 +43,7 @@ public class StringUtils {
      * @param str String
      * @return Map with Character and number of occurrences
      */
-    public Map<Character, Long> countDuplicateCharactersStream(String str) {
+    Map<Character, Long> countDuplicateCharactersStream(String str) {
 
         IntStream intStream = str.chars();
 
@@ -60,7 +60,7 @@ public class StringUtils {
      * @param str String
      * @return The character
      */
-    public char firstNonRepeatedCharacter(String str) {
+    char firstNonRepeatedCharacter(String str) {
 
         int[] flags = IntStream
                 .range(0, EXTENDED_ASCII_CODES)
@@ -96,7 +96,7 @@ public class StringUtils {
      * @param str String
      * @return The character
      */
-    public char firstNonRepeatedCharacterLinkedHashMap(String str) {
+    char firstNonRepeatedCharacterLinkedHashMap(String str) {
 
         Map<Character, Integer> chars = new LinkedHashMap<>();
 
@@ -121,7 +121,7 @@ public class StringUtils {
      * @param str String
      * @return Reversed String
      */
-    public String reverseWords(String str) {
+    String reverseWords(String str) {
 
         String[] words = str.split(WHITESPACE);
 
@@ -147,7 +147,7 @@ public class StringUtils {
      * @param str String
      * @return Reversed String
      */
-    public String reverseWordsFunctionalStyle(String str) {
+    String reverseWordsFunctionalStyle(String str) {
 
         return PATTERN.splitAsStream(str)
                 .map(word -> new StringBuilder(word).reverse())
@@ -160,7 +160,7 @@ public class StringUtils {
      * @param str String
      * @return boolean
      */
-    public boolean checkingWhetherStringContainsOnlyDigits(String str) {
+    boolean checkingWhetherStringContainsOnlyDigits(String str) {
 
         // Other solution is using regular expression
         // return str.matches("[0-9]+");
@@ -174,7 +174,7 @@ public class StringUtils {
      * @param str String
      * @return Map of String and Integer
      */
-    public Map<String, Integer> countVowelsAndConsonants(String str) {
+    Map<String, Integer> countVowelsAndConsonants(String str) {
 
         str = str.toLowerCase();
 
@@ -200,7 +200,7 @@ public class StringUtils {
      * @param str String
      * @return Map of String and Long
      */
-    public Map<String, Long> countVowelsAndConsonantsFunctionalStyle(String str) {
+    Map<String, Long> countVowelsAndConsonantsFunctionalStyle(String str) {
 
         str = str.toLowerCase();
 

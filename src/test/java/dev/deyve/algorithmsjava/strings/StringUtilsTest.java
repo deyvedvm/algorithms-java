@@ -19,7 +19,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Counting Duplicate Characters; return Map with character and number of occurrences")
-    public void countingDuplicateCharactersTest() {
+    void countingDuplicateCharactersTest() {
 
         String mockString = "aabbc";
 
@@ -32,7 +32,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Counting Duplicate Characters with Stream; return Map with character and number of occurrences")
-    public void countingDuplicateCharactersStreamTest() {
+    void countingDuplicateCharactersStreamTest() {
 
         String mockString = "aabbc";
 
@@ -45,7 +45,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Finding the first non-repeated character; return character")
-    public void firstNonRepeatedCharacterTest() {
+    void firstNonRepeatedCharacterTest() {
 
         String mockString = "David";
 
@@ -59,7 +59,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Finding the first non-repeated character using LinkedHashMap; return character")
-    public void firstNonRepeatedCharacterLinkedHashMapTest() {
+    void firstNonRepeatedCharacterLinkedHashMapTest() {
 
         String mockString = "David";
 
@@ -72,7 +72,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Reversing letters and words; return reversed string")
-    public void reverseWordsTest() {
+    void reverseWordsTest() {
 
         String mockString = "Ragnar Lothbrok";
 
@@ -85,7 +85,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Reversing letters and words functional style; return reversed string")
-    public void reverseWordsFunctionalStyleTest() {
+    void reverseWordsFunctionalStyleTest() {
 
         String mockString = "Ragnar Lothbrok";
 
@@ -98,7 +98,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Checking whether a string contains only digits; return boolean")
-    public void checkingWhetherStringContainsOnlyDigitsTest() {
+    void checkingWhetherStringContainsOnlyDigitsTest() {
 
         String mockDigits = "2019";
         String mockDigitsWithChar = "2019a";
@@ -112,7 +112,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Counting vowels and consonants; return Map of String and Integer")
-    public void countVowelsAndConsonantsTest() {
+    void countVowelsAndConsonantsTest() {
 
         String mockString = "Vieira";
 
@@ -125,7 +125,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Counting vowels and consonants functional style; return Map of String and Long")
-    public void countVowelsAndConsonantsFunctionalStyle() {
+    void countVowelsAndConsonantsFunctionalStyle() {
 
         String mockString = "Vieira";
 
