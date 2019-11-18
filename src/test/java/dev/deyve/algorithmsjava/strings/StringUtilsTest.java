@@ -125,13 +125,41 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Counting vowels and consonants functional style; return Map of String and Long")
-    void countVowelsAndConsonantsFunctionalStyle() {
+    void countVowelsAndConsonantsFunctionalStyleTest() {
 
         String mockString = "Vieira";
 
         Map<String, Long> result = stringUtils.countVowelsAndConsonantsFunctionalStyle(mockString);
 
         Map<String, Long> expectedResult = Map.of("vowels", 4L, "consonants", 2L);
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Counting the occurrences of a certain character - Unicode surrogate")
+    void countingOccurrencesOfCharacterTest() {
+
+        String mockString = "occurrences";
+        String mockCharacter = "c";
+
+        long result = stringUtils.countingOccurrencesOfCharacter(mockString, mockCharacter);
+
+        long expectedResult = 3;
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Counting the occurrences of a certain character functional style")
+    void countingOccurrencesOfCharacterFunctionalStyleTest() {
+
+        String mockString = "occurrences";
+        char mockCharacter = 'c';
+
+        long result = stringUtils.countingOccurrencesOfCharacterFunctionalStyle(mockString, mockCharacter);
+
+        long expectedResult = 3;
 
         assertEquals(result, expectedResult);
     }

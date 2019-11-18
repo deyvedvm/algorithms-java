@@ -215,4 +215,36 @@ class StringUtils {
 
         return Map.of("vowels", vowels, "consonants", consonants);
     }
+
+    /**
+     * Counting the occurrences of a certain character - Unicode surrogate
+     *
+     * @return long
+     */
+    long countingOccurrencesOfCharacter(String str, String ch) {
+
+        if (ch.codePointCount(0, ch.length()) > 1) {
+            // there is more than 1 Unicode character in the given String
+            return -1;
+        }
+
+        int result = str.length() - str.replace(ch, "").length();
+
+        // if ch.length() return 2 then this is a Unicode surrogate pair
+        return ch.length() == 2 ? result / 2 : result;
+    }
+
+    /**
+     * Counting the occurrences of a certain character functional style
+     * <p>
+     * For third-party library support, please consider Spring Framework, StringUtils.countOccurrencesOf()
+     *
+     * @return long
+     */
+    long countingOccurrencesOfCharacterFunctionalStyle(String str, char ch) {
+
+        return str.chars()
+                .filter(c -> c == ch)
+                .count();
+    }
 }
