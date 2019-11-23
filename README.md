@@ -1,8 +1,8 @@
 # Algorithms in Java
 
-# Stack
+### Stack
 
-## StringUtils
+### StringUtils
 
 - Counting Duplicate Characters
 - Counting Duplicate Characters with Stream
@@ -16,9 +16,9 @@
 - Counting the occurrences of a certain character - Unicode surrogate
 - Counting the occurrences of a certain character functional style       
 
-## Tree
+### Tree
 
-## Vector
+### Vector
 
 ```text
 .
