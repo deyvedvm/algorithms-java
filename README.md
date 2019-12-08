@@ -14,7 +14,10 @@
 - Counting vowels and consonants
 - Counting vowels and consonants functional style
 - Counting the occurrences of a certain character - Unicode surrogate
-- Counting the occurrences of a certain character functional style       
+- Counting the occurrences of a certain character functional style
+- Checking whether a string is a palindrome - "default" solution
+- Checking whether a string is a palindrome with StringBuilder
+- Checking whether a string is a palindrome functional style
 
 ### Tree
 

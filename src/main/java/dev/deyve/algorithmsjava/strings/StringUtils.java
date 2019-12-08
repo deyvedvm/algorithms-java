@@ -219,6 +219,8 @@ class StringUtils {
     /**
      * Counting the occurrences of a certain character - Unicode surrogate
      *
+     * @param str String
+     * @param ch  String
      * @return long
      */
     long countingOccurrencesOfCharacter(String str, String ch) {
@@ -239,6 +241,8 @@ class StringUtils {
      * <p>
      * For third-party library support, please consider Spring Framework, StringUtils.countOccurrencesOf()
      *
+     * @param str String
+     * @param ch  String
      * @return long
      */
     long countingOccurrencesOfCharacterFunctionalStyle(String str, char ch) {
@@ -246,5 +250,48 @@ class StringUtils {
         return str.chars()
                 .filter(c -> c == ch)
                 .count();
+    }
+
+    /**
+     * Checking whether a string is a palindrome - "default" solution
+     *
+     * @param str String
+     * @return boolean
+     */
+    public boolean isPalindrome(String str) {
+
+        int size = str.length();
+
+        for (int i = 0; i < size / 2; i++) {
+            if (str.charAt(i) != str.charAt(size - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Checking whether a string is a palindrome with StringBuilder
+     *
+     * @param str String
+     * @return boolean
+     */
+    public boolean isPalindromeWithStringBuilder(String str) {
+
+        String reversedString = new StringBuilder(str).reverse().toString();
+
+        return str.equals(reversedString);
+    }
+
+    /**
+     * Checking whether a string is a palindrome functional style
+     *
+     * @param str String
+     * @return boolean
+     */
+    public boolean isPalindromeFunctionalStyler(String str) {
+
+        return IntStream.range(0, str.length() / 2)
+                .noneMatch(letter -> str.charAt(letter) != str.charAt(str.length() - letter - 1));
     }
 }
