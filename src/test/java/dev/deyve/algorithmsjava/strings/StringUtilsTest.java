@@ -163,4 +163,70 @@ class StringUtilsTest {
 
         assertEquals(result, expectedResult);
     }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is a palindrome")
+    void checkingWhetherStringIsPalindromeTest() {
+
+        String mockString = "madam";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is not a palindrome")
+    void checkingWhetherStringIsNotPalindromeTest() {
+
+        String mockString = "madame";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertFalse(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is a palindrome with StringBuilder")
+    void checkingWhetherStringIsPalindromeWithStringBuilderTest() {
+
+        String mockString = "madam";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is not a palindrome with StringBuilder")
+    void checkingWhetherStringIsNotPalindromeWithStringBuilderTest() {
+
+        String mockString = "madame";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertFalse(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is a palindrome functional style")
+    void checkingWhetherStringIsPalindromeFunctionalStylerTest() {
+
+        String mockString = "madam";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Checking whether a string is not a palindrome functional style")
+    void checkingWhetherStringIsNotPalindromeFunctionalStylerTest() {
+
+        String mockString = "madame";
+
+        boolean result = stringUtils.isPalindrome(mockString);
+
+        assertFalse(result);
+    }
 }
