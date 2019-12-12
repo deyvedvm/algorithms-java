@@ -192,7 +192,7 @@ class StringUtilsTest {
 
         String mockString = "madam";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = stringUtils.isPalindromeWithStringBuilder(mockString);
 
         assertTrue(result);
     }
@@ -203,7 +203,7 @@ class StringUtilsTest {
 
         String mockString = "madame";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = stringUtils.isPalindromeWithStringBuilder(mockString);
 
         assertFalse(result);
     }
@@ -214,7 +214,7 @@ class StringUtilsTest {
 
         String mockString = "madam";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = stringUtils.isPalindromeFunctionalStyle(mockString);
 
         assertTrue(result);
     }
@@ -225,7 +225,7 @@ class StringUtilsTest {
 
         String mockString = "madame";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = stringUtils.isPalindromeFunctionalStyle(mockString);
 
         assertFalse(result);
     }

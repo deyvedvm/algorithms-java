@@ -289,7 +289,7 @@ class StringUtils {
      * @param str String
      * @return boolean
      */
-    public boolean isPalindromeFunctionalStyler(String str) {
+    public boolean isPalindromeFunctionalStyle(String str) {
 
         return IntStream.range(0, str.length() / 2)
                 .noneMatch(letter -> str.charAt(letter) != str.charAt(str.length() - letter - 1));
