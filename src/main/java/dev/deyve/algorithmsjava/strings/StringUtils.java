@@ -294,4 +294,39 @@ class StringUtils {
         return IntStream.range(0, str.length() / 2)
                 .noneMatch(letter -> str.charAt(letter) != str.charAt(str.length() - letter - 1));
     }
+
+    /**
+     * Removing duplicate characters
+     *
+     * @param str String
+     * @return String
+     */
+    public String removeDuplicates(String str) {
+
+        char[] chars = str.toCharArray();
+
+        StringBuilder builder = new StringBuilder();
+
+        Set<Character> characters = new HashSet<>();
+
+        for (char ch : chars) {
+            if (characters.add(ch)) {
+                builder.append(ch);
+            }
+        }
+        return builder.toString();
+    }
+
+    /**
+     * Removing duplicate characters - Functional Style
+     *
+     * @param str String
+     * @return String
+     */
+    public String removeDuplicatesFunctionalStyle(String str) {
+
+        return Arrays.stream(str.split(""))
+                .distinct()
+                .collect(Collectors.joining());
+    }
 }

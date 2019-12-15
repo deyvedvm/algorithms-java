@@ -18,6 +18,8 @@
 - Checking whether a string is a palindrome - "default" solution
 - Checking whether a string is a palindrome with StringBuilder
 - Checking whether a string is a palindrome functional style
+- Removing duplicate characters
+- Removing duplicate characters functional style
 
 ### Tree
 

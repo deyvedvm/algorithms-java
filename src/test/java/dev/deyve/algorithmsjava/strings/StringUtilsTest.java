@@ -210,7 +210,7 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Checking whether a string is a palindrome functional style")
-    void checkingWhetherStringIsPalindromeFunctionalStylerTest() {
+    void checkingWhetherStringIsPalindromeFunctionalStyleTest() {
 
         String mockString = "madam";
 
@@ -221,12 +221,38 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("StringUtils; Checking whether a string is not a palindrome functional style")
-    void checkingWhetherStringIsNotPalindromeFunctionalStylerTest() {
+    void checkingWhetherStringIsNotPalindromeFunctionalStyleTest() {
 
         String mockString = "madame";
 
         boolean result = stringUtils.isPalindromeFunctionalStyle(mockString);
 
         assertFalse(result);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Removing duplicate characters")
+    void removeDuplicatesTest() {
+
+        String mockString = "abracadabra";
+
+        String result = stringUtils.removeDuplicates(mockString);
+
+        String expectedResult = "abrcd";
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Removing duplicate characters - Functional Style")
+    void removeDuplicatesFunctionalStyleTest() {
+
+        String mockString = "abracadabra";
+
+        String result = stringUtils.removeDuplicatesFunctionalStyle(mockString);
+
+        String expectedResult = "abrcd";
+
+        assertEquals(result, expectedResult);
     }
 }
