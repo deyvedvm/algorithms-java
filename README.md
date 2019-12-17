@@ -20,6 +20,8 @@
 - Checking whether a string is a palindrome functional style
 - Removing duplicate characters
 - Removing duplicate characters functional style
+- Removing a given character 
+- Removing a given character functional style
 
 ### Tree
 

@@ -255,4 +255,30 @@ class StringUtilsTest {
 
         assertEquals(result, expectedResult);
     }
+
+    @Test
+    @DisplayName("StringUtils; Removing a given character")
+    void removeCharacterTest() {
+
+        String mockString = "abracadabra";
+
+        String result = stringUtils.removeCharacter(mockString, 'a');
+
+        String expectedResult = "brcdbr";
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("StringUtils; Removing a given character - Functional Style")
+    void removeCharacterTestFunctionalStyleTest() {
+
+        String mockString = "abracadabra";
+
+        String result = stringUtils.removeCharacterFunctionalStyle(mockString, 'a');
+
+        String expectedResult = "brcdbr";
+
+        assertEquals(result, expectedResult);
+    }
 }

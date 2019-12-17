@@ -329,4 +329,31 @@ class StringUtils {
                 .distinct()
                 .collect(Collectors.joining());
     }
+
+    /**
+     * Removing a given character
+     *
+     * @param str String
+     * @param ch  Char
+     * @return String
+     */
+    public String removeCharacter(String str, char ch) {
+
+        return str.replaceAll(Pattern.quote(String.valueOf(ch)), "");
+    }
+
+    /**
+     * Removing a given character
+     *
+     * @param str String
+     * @param ch Char
+     * @return String
+     */
+    public String removeCharacterFunctionalStyle(String str, char ch) {
+
+        return str.chars()
+                .filter(c -> c != ch)
+                .mapToObj(c -> String.valueOf((char) c))
+                .collect(Collectors.joining());
+    }
 }
