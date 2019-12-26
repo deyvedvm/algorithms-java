@@ -281,4 +281,17 @@ class StringUtilsTest {
 
         assertEquals(result, expectedResult);
     }
+
+    @Test
+    @DisplayName("StringUtils; Finding the character with the most appearances (Functional Style)")
+    void maxOccurenceCharacterTest() {
+
+        String mockString = "abracadabra";
+
+        Map<Character, Long> result = stringUtils.maxOccurenceCharacter(mockString);
+
+        Map<Character, Long> expectedResult = Map.of('a', 5L);
+
+        assertEquals(result, expectedResult);
+    }
 }

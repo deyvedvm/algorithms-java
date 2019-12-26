@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+
 class StringUtils {
 
     private static final int EXTENDED_ASCII_CODES = 256;
@@ -47,11 +51,9 @@ class StringUtils {
 
         IntStream intStream = str.chars();
 
-        Map<Character, Long> result = intStream
+        return intStream
                 .mapToObj(charAt -> (char) charAt)
-                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
-
-        return result;
+                .collect(groupingBy(c -> c, counting()));
     }
 
     /**
@@ -343,10 +345,10 @@ class StringUtils {
     }
 
     /**
-     * Removing a given character
+     * Removing a given character (Functional Style)
      *
      * @param str String
-     * @param ch Char
+     * @param ch  Char
      * @return String
      */
     public String removeCharacterFunctionalStyle(String str, char ch) {
@@ -356,4 +358,24 @@ class StringUtils {
                 .mapToObj(c -> String.valueOf((char) c))
                 .collect(Collectors.joining());
     }
+
+    /**
+     * Finding the character with the most appearances - Functional Style
+     *
+     * @param str String
+     * @return Map of Character and Long
+     */
+    public Map<Character, Long> maxOccurenceCharacter(String str) {
+
+        return str.chars()
+                .filter(ch -> !Character.isWhitespace(ch))
+                .mapToObj(ch -> (char) ch)
+                .collect(groupingBy(ch -> ch, counting()))
+                .entrySet()
+                .stream()
+                .max(comparingByValue())
+                .map(pair -> Map.of(pair.getKey(), pair.getValue()))
+                .orElse(Map.of(Character.MIN_VALUE, -1L));
+    }
+
 }

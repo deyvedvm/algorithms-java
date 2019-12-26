@@ -9,19 +9,20 @@
 - Finding the first non-repeated character
 - Finding the first non-repeated character with LinkedHashMap
 - Reversing letters and words
-- Reversing letters and words functional style
+- Reversing letters and words (functional style)
 - Checking whether a string contains only digits
 - Counting vowels and consonants
-- Counting vowels and consonants functional style
+- Counting vowels and consonants (functional style)
 - Counting the occurrences of a certain character - Unicode surrogate
-- Counting the occurrences of a certain character functional style
+- Counting the occurrences of a certain character (functional style)
 - Checking whether a string is a palindrome - "default" solution
 - Checking whether a string is a palindrome with StringBuilder
-- Checking whether a string is a palindrome functional style
+- Checking whether a string is a palindrome (functional style)
 - Removing duplicate characters
-- Removing duplicate characters functional style
+- Removing duplicate characters (functional style)
 - Removing a given character 
-- Removing a given character functional style
+- Removing a given character (functional style)
+- Finding the character with the most appearances (functional Style)
 
 ### Tree
 
