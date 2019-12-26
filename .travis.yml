@@ -1,0 +1,15 @@
+language: java
+
+jdk:
+  - openjdk8
+  - openjdk9
+  - openjdk11
+  - openjdk13
+  
+os:
+  - linux
+  - osx
+  
+sudo: false # faster builds
+
+script: "mvn test -B"
