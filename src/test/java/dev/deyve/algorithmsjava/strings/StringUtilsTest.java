@@ -1,6 +1,6 @@
 package dev.deyve.algorithmsjava.strings;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,15 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
 
-    private StringUtils stringUtils;
+    private static StringUtils stringUtils;
 
-    @BeforeEach
-    void setUp() {
+    @BeforeAll
+    static void setUp() {
         stringUtils = new StringUtils();
     }
 
     @Test
-    @DisplayName("StringUtils; Counting Duplicate Characters; return Map with character and number of occurrences")
+    @DisplayName("Counting Duplicate Characters; return Map with character and number of occurrences")
     void countingDuplicateCharactersTest() {
 
         String mockString = "aabbc";
@@ -31,7 +31,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Counting Duplicate Characters with Stream; return Map with character and number of occurrences")
+    @DisplayName("Counting Duplicate Characters with Stream; return Map with character and number of occurrences")
     void countingDuplicateCharactersStreamTest() {
 
         String mockString = "aabbc";
@@ -44,7 +44,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Finding the first non-repeated character; return character")
+    @DisplayName("Finding the first non-repeated character; return character")
     void firstNonRepeatedCharacterTest() {
 
         String mockString = "David";
@@ -58,7 +58,7 @@ class StringUtilsTest {
 
 
     @Test
-    @DisplayName("StringUtils; Finding the first non-repeated character using LinkedHashMap; return character")
+    @DisplayName("Finding the first non-repeated character using LinkedHashMap; return character")
     void firstNonRepeatedCharacterLinkedHashMapTest() {
 
         String mockString = "David";
@@ -71,7 +71,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Reversing letters and words; return reversed string")
+    @DisplayName("Reversing letters and words; return reversed string")
     void reverseWordsTest() {
 
         String mockString = "Ragnar Lothbrok";
@@ -84,7 +84,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Reversing letters and words functional style; return reversed string")
+    @DisplayName("Reversing letters and words functional style; return reversed string")
     void reverseWordsFunctionalStyleTest() {
 
         String mockString = "Ragnar Lothbrok";
@@ -97,7 +97,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string contains only digits; return boolean")
+    @DisplayName("Checking whether a string contains only digits; return boolean")
     void checkingWhetherStringContainsOnlyDigitsTest() {
 
         String mockDigits = "2019";
@@ -111,7 +111,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Counting vowels and consonants; return Map of String and Integer")
+    @DisplayName("Counting vowels and consonants; return Map of String and Integer")
     void countVowelsAndConsonantsTest() {
 
         String mockString = "Vieira";
@@ -124,7 +124,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Counting vowels and consonants functional style; return Map of String and Long")
+    @DisplayName("Counting vowels and consonants functional style; return Map of String and Long")
     void countVowelsAndConsonantsFunctionalStyleTest() {
 
         String mockString = "Vieira";
@@ -137,7 +137,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Counting the occurrences of a certain character - Unicode surrogate")
+    @DisplayName("Counting the occurrences of a certain character - Unicode surrogate")
     void countingOccurrencesOfCharacterTest() {
 
         String mockString = "occurrences";
@@ -151,7 +151,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Counting the occurrences of a certain character functional style")
+    @DisplayName("Counting the occurrences of a certain character functional style")
     void countingOccurrencesOfCharacterFunctionalStyleTest() {
 
         String mockString = "occurrences";
@@ -165,7 +165,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is a palindrome")
+    @DisplayName("Checking whether a string is a palindrome")
     void checkingWhetherStringIsPalindromeTest() {
 
         String mockString = "madam";
@@ -176,7 +176,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is not a palindrome")
+    @DisplayName("Checking whether a string is not a palindrome")
     void checkingWhetherStringIsNotPalindromeTest() {
 
         String mockString = "madame";
@@ -187,7 +187,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is a palindrome with StringBuilder")
+    @DisplayName("Checking whether a string is a palindrome with StringBuilder")
     void checkingWhetherStringIsPalindromeWithStringBuilderTest() {
 
         String mockString = "madam";
@@ -198,7 +198,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is not a palindrome with StringBuilder")
+    @DisplayName("Checking whether a string is not a palindrome with StringBuilder")
     void checkingWhetherStringIsNotPalindromeWithStringBuilderTest() {
 
         String mockString = "madame";
@@ -209,7 +209,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is a palindrome functional style")
+    @DisplayName("Checking whether a string is a palindrome functional style")
     void checkingWhetherStringIsPalindromeFunctionalStyleTest() {
 
         String mockString = "madam";
@@ -220,7 +220,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Checking whether a string is not a palindrome functional style")
+    @DisplayName("Checking whether a string is not a palindrome functional style")
     void checkingWhetherStringIsNotPalindromeFunctionalStyleTest() {
 
         String mockString = "madame";
@@ -231,7 +231,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Removing duplicate characters")
+    @DisplayName("Removing duplicate characters")
     void removeDuplicatesTest() {
 
         String mockString = "abracadabra";
@@ -244,7 +244,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Removing duplicate characters - Functional Style")
+    @DisplayName("Removing duplicate characters - Functional Style")
     void removeDuplicatesFunctionalStyleTest() {
 
         String mockString = "abracadabra";
@@ -257,7 +257,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Removing a given character")
+    @DisplayName("Removing a given character")
     void removeCharacterTest() {
 
         String mockString = "abracadabra";
@@ -270,7 +270,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Removing a given character - Functional Style")
+    @DisplayName("Removing a given character - Functional Style")
     void removeCharacterTestFunctionalStyleTest() {
 
         String mockString = "abracadabra";
@@ -283,7 +283,7 @@ class StringUtilsTest {
     }
 
     @Test
-    @DisplayName("StringUtils; Finding the character with the most appearances (Functional Style)")
+    @DisplayName("Finding the character with the most appearances (Functional Style)")
     void maxOccurenceCharacterTest() {
 
         String mockString = "abracadabra";
