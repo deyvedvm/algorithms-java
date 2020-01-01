@@ -28,8 +28,11 @@
 
 ### Vector
 
+### Search
+
+- binarySearch
+
 ```text
-.
 ├── java.iml
 ├── LICENSE
 ├── pom.xml
@@ -40,6 +43,8 @@
     │       └── dev
     │           └── deyve
     │               └── algorithmsjava
+    │                   ├── search
+    │                   │   └── Search.java
     │                   ├── stacks
     │                   │   └── Stack.java
     │                   ├── strings
@@ -54,6 +59,8 @@
             └── dev
                 └── deyve
                     └── algorithmsjava
+                        ├── search
+                        │   └── SearchTest.java
                         ├── stacks
                         │   └── StackTest.java
                         ├── strings
@@ -63,5 +70,5 @@
                         └── vectors
                             └── VectorTest.java
 
-19 directories, 13 files
+21 directories, 15 files
 ```
