@@ -1,7 +1,9 @@
 
 FROM maven:3.6-jdk-13
 
-LABEL <Deyve Vieira>=<deyvedvm@yahoo.com.br>
+LABEL "Name"="Deyve Vieira"
+
+LABEL "email"="deyvedvm@yahoo.com.br"
 
 COPY . /usr/src/myapp
 
