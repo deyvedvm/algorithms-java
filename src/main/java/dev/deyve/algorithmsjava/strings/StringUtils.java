@@ -26,7 +26,7 @@ class StringUtils {
      * @param str String
      * @return Map with Character and number of occurrences
      */
-    Map<Character, Integer> countingDuplicateCharacters(String str) {
+    static Map<Character, Integer> countingDuplicateCharacters(String str) {
 
         Map<Character, Integer> result = new HashMap<>();
 
@@ -48,7 +48,7 @@ class StringUtils {
      * @param str String
      * @return Map with Character and number of occurrences
      */
-    Map<Character, Long> countDuplicateCharactersStream(String str) {
+    static Map<Character, Long> countDuplicateCharactersStream(String str) {
 
         IntStream intStream = str.chars();
 
@@ -63,7 +63,7 @@ class StringUtils {
      * @param str String
      * @return The character
      */
-    char firstNonRepeatedCharacter(String str) {
+    static char firstNonRepeatedCharacter(String str) {
 
         int[] flags = IntStream
                 .range(0, EXTENDED_ASCII_CODES)
@@ -99,7 +99,7 @@ class StringUtils {
      * @param str String
      * @return The character
      */
-    char firstNonRepeatedCharacterLinkedHashMap(String str) {
+    static char firstNonRepeatedCharacterLinkedHashMap(String str) {
 
         Map<Character, Integer> chars = new LinkedHashMap<>();
 
@@ -124,7 +124,7 @@ class StringUtils {
      * @param str String
      * @return Reversed String
      */
-    String reverseWords(String str) {
+    static String reverseWords(String str) {
 
         String[] words = str.split(WHITESPACE);
 
@@ -150,7 +150,7 @@ class StringUtils {
      * @param str String
      * @return Reversed String
      */
-    String reverseWordsFunctionalStyle(String str) {
+    static String reverseWordsFunctionalStyle(String str) {
 
         return PATTERN.splitAsStream(str)
                 .map(word -> new StringBuilder(word).reverse())
@@ -163,7 +163,7 @@ class StringUtils {
      * @param str String
      * @return boolean
      */
-    boolean checkingWhetherStringContainsOnlyDigits(String str) {
+    static boolean checkingWhetherStringContainsOnlyDigits(String str) {
 
         // Other solution is using regular expression
         // return str.matches("[0-9]+");
@@ -177,7 +177,7 @@ class StringUtils {
      * @param str String
      * @return Map of String and Integer
      */
-    Map<String, Integer> countVowelsAndConsonants(String str) {
+    static Map<String, Integer> countVowelsAndConsonants(String str) {
 
         str = str.toLowerCase();
 
@@ -203,7 +203,7 @@ class StringUtils {
      * @param str String
      * @return Map of String and Long
      */
-    Map<String, Long> countVowelsAndConsonantsFunctionalStyle(String str) {
+    static Map<String, Long> countVowelsAndConsonantsFunctionalStyle(String str) {
 
         str = str.toLowerCase();
 
@@ -226,7 +226,7 @@ class StringUtils {
      * @param ch  String
      * @return long
      */
-    long countingOccurrencesOfCharacter(String str, String ch) {
+    static long countingOccurrencesOfCharacter(String str, String ch) {
 
         if (ch.codePointCount(0, ch.length()) > 1) {
             // there is more than 1 Unicode character in the given String
@@ -248,7 +248,7 @@ class StringUtils {
      * @param ch  String
      * @return long
      */
-    long countingOccurrencesOfCharacterFunctionalStyle(String str, char ch) {
+    static long countingOccurrencesOfCharacterFunctionalStyle(String str, char ch) {
 
         return str.chars()
                 .filter(c -> c == ch)
@@ -261,7 +261,7 @@ class StringUtils {
      * @param str String
      * @return boolean
      */
-    public boolean isPalindrome(String str) {
+    static boolean isPalindrome(String str) {
 
         int size = str.length();
 
@@ -279,7 +279,7 @@ class StringUtils {
      * @param str String
      * @return boolean
      */
-    public boolean isPalindromeWithStringBuilder(String str) {
+    static boolean isPalindromeWithStringBuilder(String str) {
 
         String reversedString = new StringBuilder(str).reverse().toString();
 
@@ -292,7 +292,7 @@ class StringUtils {
      * @param str String
      * @return boolean
      */
-    public boolean isPalindromeFunctionalStyle(String str) {
+    static boolean isPalindromeFunctionalStyle(String str) {
 
         return IntStream.range(0, str.length() / 2)
                 .noneMatch(letter -> str.charAt(letter) != str.charAt(str.length() - letter - 1));
@@ -304,7 +304,7 @@ class StringUtils {
      * @param str String
      * @return String
      */
-    public String removeDuplicates(String str) {
+    static String removeDuplicates(String str) {
 
         char[] chars = str.toCharArray();
 
@@ -326,7 +326,7 @@ class StringUtils {
      * @param str String
      * @return String
      */
-    public String removeDuplicatesFunctionalStyle(String str) {
+    static String removeDuplicatesFunctionalStyle(String str) {
 
         return Arrays.stream(str.split(""))
                 .distinct()
@@ -340,7 +340,7 @@ class StringUtils {
      * @param ch  Char
      * @return String
      */
-    public String removeCharacter(String str, char ch) {
+    static String removeCharacter(String str, char ch) {
 
         return str.replaceAll(Pattern.quote(String.valueOf(ch)), "");
     }
@@ -352,7 +352,7 @@ class StringUtils {
      * @param ch  Char
      * @return String
      */
-    public String removeCharacterFunctionalStyle(String str, char ch) {
+    static String removeCharacterFunctionalStyle(String str, char ch) {
 
         return str.chars()
                 .filter(c -> c != ch)
@@ -366,7 +366,7 @@ class StringUtils {
      * @param str String
      * @return Map of Character and Long
      */
-    public Map<Character, Long> maxOccurrenceCharacter(String str) {
+    static Map<Character, Long> maxOccurrenceCharacter(String str) {
 
         return str.chars()
                 .filter(ch -> !Character.isWhitespace(ch))
@@ -386,7 +386,7 @@ class StringUtils {
      * @param searchString Search String
      * @return String sorted
      */
-    public static int countStringInStringFirstApproach(String str, String searchString) {
+    static int countStringInStringFirstApproach(String str, String searchString) {
 
         int result = str.split(Pattern.quote(searchString), -1).length - 1;
 
@@ -400,7 +400,7 @@ class StringUtils {
      * @param searchString Search String
      * @return String sorted
      */
-    public static int countStringInStringSecondApproach(String str, String searchString) {
+    static int countStringInStringSecondApproach(String str, String searchString) {
 
         Pattern pattern = Pattern.compile(Pattern.quote(searchString));
 

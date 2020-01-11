@@ -1,6 +1,5 @@
 package dev.deyve.algorithmsjava.strings;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,20 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
 
-    private static StringUtils stringUtils;
-
-    @BeforeAll
-    static void setUp() {
-        stringUtils = new StringUtils();
-    }
-
     @Test
     @DisplayName("Counting Duplicate Characters; return Map with character and number of occurrences")
     void countingDuplicateCharactersTest() {
 
         String mockString = "aabbc";
 
-        Map<Character, Integer> result = stringUtils.countingDuplicateCharacters(mockString);
+        Map<Character, Integer> result = countingDuplicateCharacters(mockString);
 
         Map<Character, Integer> expectedResult = Map.of('a', 2, 'b', 2, 'c', 1);
 
@@ -37,7 +29,7 @@ class StringUtilsTest {
 
         String mockString = "aabbc";
 
-        Map<Character, Long> result = stringUtils.countDuplicateCharactersStream(mockString);
+        Map<Character, Long> result = countDuplicateCharactersStream(mockString);
 
         Map<Character, Long> expectedResult = Map.of('a', 2L, 'b', 2L, 'c', 1L);
 
@@ -50,7 +42,7 @@ class StringUtilsTest {
 
         String mockString = "David";
 
-        Character result = stringUtils.firstNonRepeatedCharacter(mockString);
+        Character result = firstNonRepeatedCharacter(mockString);
 
         Character expectedResult = 'D';
 
@@ -64,7 +56,7 @@ class StringUtilsTest {
 
         String mockString = "David";
 
-        Character result = stringUtils.firstNonRepeatedCharacterLinkedHashMap(mockString);
+        Character result = firstNonRepeatedCharacterLinkedHashMap(mockString);
 
         Character expectedResult = 'D';
 
@@ -77,7 +69,7 @@ class StringUtilsTest {
 
         String mockString = "Ragnar Lothbrok";
 
-        String result = stringUtils.reverseWords(mockString);
+        String result = reverseWords(mockString);
 
         String expectedResult = "rangaR korbhtoL ";
 
@@ -90,7 +82,7 @@ class StringUtilsTest {
 
         String mockString = "Ragnar Lothbrok";
 
-        String result = stringUtils.reverseWordsFunctionalStyle(mockString);
+        String result = reverseWordsFunctionalStyle(mockString);
 
         String expectedResult = "rangaR korbhtoL";
 
@@ -104,8 +96,8 @@ class StringUtilsTest {
         String mockDigits = "2019";
         String mockDigitsWithChar = "2019a";
 
-        boolean resultDigits = stringUtils.checkingWhetherStringContainsOnlyDigits(mockDigits);
-        boolean resultDigitsWithChar = stringUtils.checkingWhetherStringContainsOnlyDigits(mockDigitsWithChar);
+        boolean resultDigits = checkingWhetherStringContainsOnlyDigits(mockDigits);
+        boolean resultDigitsWithChar = checkingWhetherStringContainsOnlyDigits(mockDigitsWithChar);
 
         assertTrue(resultDigits);
         assertFalse(resultDigitsWithChar);
@@ -117,7 +109,7 @@ class StringUtilsTest {
 
         String mockString = "Vieira";
 
-        Map<String, Integer> result = stringUtils.countVowelsAndConsonants(mockString);
+        Map<String, Integer> result = countVowelsAndConsonants(mockString);
 
         Map<String, Integer> expectedResult = Map.of("vowels", 4, "consonants", 2);
 
@@ -130,7 +122,7 @@ class StringUtilsTest {
 
         String mockString = "Vieira";
 
-        Map<String, Long> result = stringUtils.countVowelsAndConsonantsFunctionalStyle(mockString);
+        Map<String, Long> result = countVowelsAndConsonantsFunctionalStyle(mockString);
 
         Map<String, Long> expectedResult = Map.of("vowels", 4L, "consonants", 2L);
 
@@ -144,7 +136,7 @@ class StringUtilsTest {
         String mockString = "occurrences";
         String mockCharacter = "c";
 
-        long result = stringUtils.countingOccurrencesOfCharacter(mockString, mockCharacter);
+        long result = countingOccurrencesOfCharacter(mockString, mockCharacter);
 
         long expectedResult = 3;
 
@@ -158,7 +150,7 @@ class StringUtilsTest {
         String mockString = "occurrences";
         char mockCharacter = 'c';
 
-        long result = stringUtils.countingOccurrencesOfCharacterFunctionalStyle(mockString, mockCharacter);
+        long result = countingOccurrencesOfCharacterFunctionalStyle(mockString, mockCharacter);
 
         long expectedResult = 3;
 
@@ -171,7 +163,7 @@ class StringUtilsTest {
 
         String mockString = "madam";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = isPalindrome(mockString);
 
         assertTrue(result);
     }
@@ -182,7 +174,7 @@ class StringUtilsTest {
 
         String mockString = "madame";
 
-        boolean result = stringUtils.isPalindrome(mockString);
+        boolean result = isPalindrome(mockString);
 
         assertFalse(result);
     }
@@ -193,7 +185,7 @@ class StringUtilsTest {
 
         String mockString = "madam";
 
-        boolean result = stringUtils.isPalindromeWithStringBuilder(mockString);
+        boolean result = isPalindromeWithStringBuilder(mockString);
 
         assertTrue(result);
     }
@@ -204,7 +196,7 @@ class StringUtilsTest {
 
         String mockString = "madame";
 
-        boolean result = stringUtils.isPalindromeWithStringBuilder(mockString);
+        boolean result = isPalindromeWithStringBuilder(mockString);
 
         assertFalse(result);
     }
@@ -215,7 +207,7 @@ class StringUtilsTest {
 
         String mockString = "madam";
 
-        boolean result = stringUtils.isPalindromeFunctionalStyle(mockString);
+        boolean result = isPalindromeFunctionalStyle(mockString);
 
         assertTrue(result);
     }
@@ -226,7 +218,7 @@ class StringUtilsTest {
 
         String mockString = "madame";
 
-        boolean result = stringUtils.isPalindromeFunctionalStyle(mockString);
+        boolean result = isPalindromeFunctionalStyle(mockString);
 
         assertFalse(result);
     }
@@ -237,7 +229,7 @@ class StringUtilsTest {
 
         String mockString = "abracadabra";
 
-        String result = stringUtils.removeDuplicates(mockString);
+        String result = removeDuplicates(mockString);
 
         String expectedResult = "abrcd";
 
@@ -250,7 +242,7 @@ class StringUtilsTest {
 
         String mockString = "abracadabra";
 
-        String result = stringUtils.removeDuplicatesFunctionalStyle(mockString);
+        String result = removeDuplicatesFunctionalStyle(mockString);
 
         String expectedResult = "abrcd";
 
@@ -263,7 +255,7 @@ class StringUtilsTest {
 
         String mockString = "abracadabra";
 
-        String result = stringUtils.removeCharacter(mockString, 'a');
+        String result = removeCharacter(mockString, 'a');
 
         String expectedResult = "brcdbr";
 
@@ -276,7 +268,7 @@ class StringUtilsTest {
 
         String mockString = "abracadabra";
 
-        String result = stringUtils.removeCharacterFunctionalStyle(mockString, 'a');
+        String result = removeCharacterFunctionalStyle(mockString, 'a');
 
         String expectedResult = "brcdbr";
 
@@ -289,7 +281,7 @@ class StringUtilsTest {
 
         String mockString = "abracadabra";
 
-        Map<Character, Long> result = stringUtils.maxOccurrenceCharacter(mockString);
+        Map<Character, Long> result = maxOccurrenceCharacter(mockString);
 
         Map<Character, Long> expectedResult = Map.of('a', 5L);
 
