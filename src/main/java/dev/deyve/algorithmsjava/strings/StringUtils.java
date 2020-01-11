@@ -1,6 +1,7 @@
 package dev.deyve.algorithmsjava.strings;
 
 import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -365,7 +366,7 @@ class StringUtils {
      * @param str String
      * @return Map of Character and Long
      */
-    public Map<Character, Long> maxOccurenceCharacter(String str) {
+    public Map<Character, Long> maxOccurrenceCharacter(String str) {
 
         return str.chars()
                 .filter(ch -> !Character.isWhitespace(ch))
@@ -378,4 +379,41 @@ class StringUtils {
                 .orElse(Map.of(Character.MIN_VALUE, -1L));
     }
 
+    /**
+     * Counting substring occurrences in a string - 11 in 111 occurs 1 time
+     *
+     * @param str          Strings
+     * @param searchString Search String
+     * @return String sorted
+     */
+    public static int countStringInStringFirstApproach(String str, String searchString) {
+
+        int result = str.split(Pattern.quote(searchString), -1).length - 1;
+
+        return Math.max(result, 0);
+    }
+
+    /**
+     * Counting substring occurrences in a string - 11 in 111 occurs 2 times
+     *
+     * @param str          Strings
+     * @param searchString Search String
+     * @return String sorted
+     */
+    public static int countStringInStringSecondApproach(String str, String searchString) {
+
+        Pattern pattern = Pattern.compile(Pattern.quote(searchString));
+
+        Matcher matcher = pattern.matcher(str);
+
+        int position = 0;
+        int count = 0;
+
+        while (matcher.find(position)) {
+            position = matcher.start() + 1;
+            count++;
+        }
+
+        return count;
+    }
 }

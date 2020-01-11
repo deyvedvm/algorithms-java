@@ -23,6 +23,8 @@
 - Removing a given character 
 - Removing a given character (functional style)
 - Finding the character with the most appearances (functional Style)
+- Counting substring occurrences in a string first Approach (11 in 111 occurs 1 time)
+- Counting substring occurrences in a string second Approach (11 in 111 occurs 2 times)
 
 ### Tree
 

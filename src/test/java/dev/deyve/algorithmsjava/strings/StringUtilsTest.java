@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
+import static dev.deyve.algorithmsjava.strings.StringUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
@@ -284,13 +285,43 @@ class StringUtilsTest {
 
     @Test
     @DisplayName("Finding the character with the most appearances (Functional Style)")
-    void maxOccurenceCharacterTest() {
+    void maxOccurrenceCharacterTest() {
 
         String mockString = "abracadabra";
 
-        Map<Character, Long> result = stringUtils.maxOccurenceCharacter(mockString);
+        Map<Character, Long> result = stringUtils.maxOccurrenceCharacter(mockString);
 
         Map<Character, Long> expectedResult = Map.of('a', 5L);
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("Counting substring occurrences in a string first Approach (11 in 111 occurs 1 time)")
+    void countStringInStringFirstApproachTest() {
+
+        String mockString = "abracadabra";
+
+        String mockSearchString = "ab";
+
+        Integer result = countStringInStringFirstApproach(mockString, mockSearchString);
+
+        Integer expectedResult = 2;
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("Counting substring occurrences in a string second Approach (11 in 111 occurs 2 times)")
+    void countStringInStringSecondApproachTest() {
+
+        String mockString = "aaa";
+
+        String mockSearchString = "aa";
+
+        Integer result = countStringInStringSecondApproach(mockString, mockSearchString);
+
+        Integer expectedResult = 2;
 
         assertEquals(result, expectedResult);
     }
