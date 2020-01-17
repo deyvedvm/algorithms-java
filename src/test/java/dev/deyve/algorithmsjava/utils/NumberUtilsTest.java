@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static dev.deyve.algorithmsjava.utils.NumberUtils.sumOfIntegers;
+import static dev.deyve.algorithmsjava.utils.NumberUtils.sumOfIntegersWithReduce;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NumberUtilsTest {
@@ -52,4 +53,16 @@ class NumberUtilsTest {
         assertEquals(result, expectedResult);
     }
 
+    @Test
+    @DisplayName("Sum of Integers with reduce ; should sum a list of integers ; return sum of integers")
+    void sumOfIntegersWithReduceTest() {
+
+        List<Integer> mockIntegers = List.of(2, 3, 5, 10);
+
+        Integer result = sumOfIntegersWithReduce(mockIntegers);
+
+        Integer expectedResult = 20;
+
+        assertEquals(result, expectedResult);
+    }
 }
