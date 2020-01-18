@@ -416,4 +416,15 @@ class StringUtils {
 
         return count;
     }
+
+    /**
+     * Concat Strings with Stream Reduce
+     *
+     * @param stringList List of Strings
+     * @return String
+     */
+    static String concatStringsWithStreamReduce(List<String> stringList) {
+
+        return stringList.stream().reduce("", String::concat);
+    }
 }

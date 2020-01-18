@@ -3,6 +3,8 @@ package dev.deyve.algorithmsjava.strings;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import static dev.deyve.algorithmsjava.strings.StringUtils.*;
@@ -314,6 +316,19 @@ class StringUtilsTest {
         Integer result = countStringInStringSecondApproach(mockString, mockSearchString);
 
         Integer expectedResult = 2;
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("concatStringsWithStreamReduce ; List of Strings ; return String")
+    void concatStringsWithStreamReduceTest() {
+
+        List<String> stringListMock = Arrays.asList("Vin", "ki", "gs");
+
+        String result = concatStringsWithStreamReduce(stringListMock);
+
+        String expectedResult = "Vinkigs";
 
         assertEquals(result, expectedResult);
     }
