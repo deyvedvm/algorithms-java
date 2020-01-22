@@ -3,6 +3,9 @@ package dev.deyve.algorithmsjava.utils;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Number Utils
+ */
 public class NumberUtils {
 
     /**

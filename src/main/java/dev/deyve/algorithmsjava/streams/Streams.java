@@ -2,6 +2,9 @@ package dev.deyve.algorithmsjava.streams;
 
 import java.util.List;
 
+/**
+ * Java 8+ Streams
+ */
 public class Streams {
 
     /**

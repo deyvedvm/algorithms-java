@@ -10,6 +10,9 @@ import java.util.Map;
 import static dev.deyve.algorithmsjava.strings.StringUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * String Utils Tests
+ */
 class StringUtilsTest {
 
     @Test

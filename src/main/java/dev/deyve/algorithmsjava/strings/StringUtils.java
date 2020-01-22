@@ -10,6 +10,9 @@ import static java.util.Map.Entry.comparingByValue;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
+/**
+ * String Utils
+ */
 class StringUtils {
 
     private static final int EXTENDED_ASCII_CODES = 256;
