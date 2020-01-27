@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static dev.deyve.algorithmsjava.streams.Streams.filterStringList;
 import static dev.deyve.algorithmsjava.streams.Streams.sumValuesFromObject;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,7 +28,7 @@ class StreamsTest {
     }
 
     @Test
-    @DisplayName("sumValuesFromObject; List of Objects ; return a sum of values")
+    @DisplayName("Sum values from Object ; should receive a List of Objects ; return a sum of values")
     void sumValuesFromObjectTest() {
         List<User> users = Arrays.asList(john, julie);
 
@@ -36,5 +37,18 @@ class StreamsTest {
         Integer expectedResult = 77;
 
         assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("Filter string list ; should receive a list of strings ; return a list of strings filtered")
+    void filterStringListTest(){
+
+        List<String> mockStrings = Arrays.asList("apples", "oranges", "pear", "bananas", "banana", "avocados", "apricots");
+
+        String mockString = "a";
+
+        List<String> result = filterStringList(mockStrings, mockString);
+
+        assertEquals(result, Arrays.asList("apples", "avocados", "apricots" ) );
     }
 }
