@@ -1,7 +1,6 @@
 package dev.deyve.algorithmsjava.streams;
 
 import java.util.List;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
@@ -23,18 +22,17 @@ public class Streams {
     }
 
     /**
-     *
-     *  Filter String List
+     * Filter String List
      *
      * @param stringList String List
-     * @param str String
+     * @param str        String
      * @return String
      */
-    static List<String> filterStringList(List<String> stringList, String str){
+    static List<String> filterStringList(List<String> stringList, String str) {
 
-         return stringList
-                 .stream()
-                 .filter(string -> string.startsWith(str))
-                 .collect(Collectors.toList());
+        return stringList
+                .stream()
+                .filter(string -> string.startsWith(str))
+                .collect(Collectors.toList());
     }
 }
