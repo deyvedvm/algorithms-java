@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
-import static dev.deyve.algorithmsjava.streams.Streams.filterStringList;
-import static dev.deyve.algorithmsjava.streams.Streams.sumValuesFromObject;
+import static dev.deyve.algorithmsjava.streams.Streams.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -43,11 +43,30 @@ class StreamsTest {
     @DisplayName("Filter string list ; should receive a list of strings ; return a list of strings filtered")
     void filterStringListTest() {
 
-        List<String> mockStrings = Arrays.asList("apples", "oranges", "pear", "bananas", "banana", "avocados", "apricots");
+        List<String> mockStrings = Arrays.asList("apples", "oranges", "pear", "bananas", "avocados", "apricots");
 
         String mockString = "a";
 
         List<String> result = filterStringList(mockStrings, mockString);
+
+        assertEquals(result, Arrays.asList("apples", "avocados", "apricots"));
+    }
+
+    @Test
+    @DisplayName("Filter Strings with Predicate ; should receive a list of strings ; return a list of strings filtered")
+    void filterStringsWithPredicateTest() {
+
+        List<String> mockStrings = Arrays.asList("apples", "oranges", "pear", "bananas", "avocados", "apricots");
+
+        Predicate<String> predicateA = string -> string.startsWith("a");
+
+        Predicate<String> predicateB = string -> string.startsWith("b");
+
+        Predicate<String> predicateN = string -> string.contains("n");
+
+        Predicate<String> stringPredicate = predicateA.or(predicateB).and(predicateN.negate());
+
+        List<String> result = filterStringsWithPredicate(mockStrings, stringPredicate);
 
         assertEquals(result, Arrays.asList("apples", "avocados", "apricots"));
     }
