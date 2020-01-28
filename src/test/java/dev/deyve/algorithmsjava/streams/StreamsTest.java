@@ -41,7 +41,7 @@ class StreamsTest {
 
     @Test
     @DisplayName("Filter string list ; should receive a list of strings ; return a list of strings filtered")
-    void filterStringListTest(){
+    void filterStringListTest() {
 
         List<String> mockStrings = Arrays.asList("apples", "oranges", "pear", "bananas", "banana", "avocados", "apricots");
 
@@ -49,6 +49,6 @@ class StreamsTest {
 
         List<String> result = filterStringList(mockStrings, mockString);
 
-        assertEquals(result, Arrays.asList("apples", "avocados", "apricots" ) );
+        assertEquals(result, Arrays.asList("apples", "avocados", "apricots"));
     }
 }
