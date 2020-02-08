@@ -38,13 +38,13 @@ public class Streams {
     }
 
     /**
-     *  Filter Strings with Predicate
+     * Filter Strings with Predicate
      *
      * @param stringList List of Strings
-     * @param predicate Predicate
+     * @param predicate  Predicate
      * @return Strings filtered
      */
-    static List<String> filterStringsWithPredicate(List<String> stringList ,Predicate<String> predicate){
+    static List<String> filterStringsWithPredicate(List<String> stringList, Predicate<String> predicate) {
 
         return stringList
                 .stream()
