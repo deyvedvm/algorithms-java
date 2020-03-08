@@ -33,8 +33,7 @@ public class Vector<T> {
 
         if (this.size < this.elements.length) {
 
-            this.elements[this.size] = element;
-            this.size++;
+            this.elements[this.size++] = element;
             return true;
 
         } else {

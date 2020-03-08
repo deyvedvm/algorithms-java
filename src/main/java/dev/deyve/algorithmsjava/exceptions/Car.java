@@ -15,11 +15,14 @@ public class Car {
 
     private String color;
 
-    public Car(String name, String color) {
+    private Integer year;
+
+    public Car(String name, String color, Integer year) {
 
         this.name = Objects.requireNonNull(name, "Car name cannot be null");
 
         this.color = Objects.requireNonNull(color, "Car color cannot be null ");
 
+        this.year = Objects.requireNonNullElse(year, 0);
     }
 }
