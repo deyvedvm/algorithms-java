@@ -1,6 +1,5 @@
 package dev.deyve.algorithmsjava.exceptions;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 
 public class Exceptions {
@@ -8,20 +7,18 @@ public class Exceptions {
     /**
      * Check object and throws IllegalArgumentException exception
      *
-     * @param obj             Object to check
-     * @param messageSupplier Supplier Message
-     * @param <T>             T Object
+     * @param obj               Object to check
+     * @param exceptionSupplier Supplier Message
+     * @param <T>               T Object
      * @return T Object
      */
-    public static <T> T requireNonNullElseThrowIAE(T obj, Supplier<String> messageSupplier) {
+    public static <T, X extends Throwable> T requireNotNullElseThrow(T obj, Supplier<? extends X> exceptionSupplier) throws X {
 
-        if (obj == null) {
-            throw new IllegalArgumentException(Optional.ofNullable(messageSupplier)
-                    .map(Supplier::get)
-                    .orElse(null));
+        if (obj != null) {
+            return obj;
+        } else {
+            throw exceptionSupplier.get();
         }
-
-        return obj;
     }
 
     /**
@@ -42,5 +39,4 @@ public class Exceptions {
 
         return obj;
     }
-
 }

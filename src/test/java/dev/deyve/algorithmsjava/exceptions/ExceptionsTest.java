@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.function.Supplier;
 
 import static dev.deyve.algorithmsjava.exceptions.Exceptions.requireNonNullElseThrow;
-import static dev.deyve.algorithmsjava.exceptions.Exceptions.requireNonNullElseThrowIAE;
+import static dev.deyve.algorithmsjava.exceptions.Exceptions.requireNotNullElseThrow;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -28,9 +28,9 @@ class ExceptionsTest {
 
         Object nullObject = null;
 
-        Supplier<String> stringSupplier = () -> "Object cannot be null";
+        Supplier<IllegalArgumentException> exceptionSupplier = () -> new IllegalArgumentException("Object cannot be null");
 
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> requireNonNullElseThrowIAE(nullObject, stringSupplier));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> requireNotNullElseThrow(nullObject, exceptionSupplier));
 
         Class<? extends Exception> clazz = exception.getClass();
 
@@ -41,11 +41,11 @@ class ExceptionsTest {
     @DisplayName("Check object and return a object ; receives the object and supplier ; return object")
     void requireNonNullElseNotThrowIAETest() {
 
-        Object carObject = new Car("Urus", "Black");
+        Object carObject = new Car("Urus", "Black", 2020);
 
-        Supplier<String> stringSupplier = () -> "Object cannot be null";
+        Supplier<IllegalArgumentException> exceptionSupplier = () -> new IllegalArgumentException("Object cannot be null");
 
-        Object result = requireNonNullElseThrowIAE(carObject, stringSupplier);
+        Object result = requireNotNullElseThrow(carObject, exceptionSupplier);
 
         assertSame(result.getClass(), Car.class);
     }
@@ -69,7 +69,7 @@ class ExceptionsTest {
     @DisplayName("Check object and return a object ; receives the object and exception ; return object")
     void requireNonNullElseNotThrowTest() {
 
-        Object carObject = new Car("Urus", "Black");
+        Object carObject = new Car("Urus", "Black", 2020);
 
         UnsupportedOperationException mockException = new UnsupportedOperationException();
 
