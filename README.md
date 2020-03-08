@@ -26,6 +26,11 @@
 - Counting substring occurrences in a string first Approach (11 in 111 occurs 1 time)
 - Counting substring occurrences in a string second Approach (11 in 111 occurs 2 times)
 
+### NumberUtils
+
+- Sum of Integers
+- Sum of Integers with stream reduce
+
 ### Tree
 
 ### Vector
@@ -34,7 +39,14 @@
 
 - binarySearch
 
+### Exceptions
+
+- Check object and throws generic exception
+- Check object and throws generic exception using Supplier
+
 ```text
+├── docker-compose.yml
+├── Dockerfile
 ├── java.iml
 ├── LICENSE
 ├── pom.xml
@@ -45,15 +57,27 @@
     │       └── dev
     │           └── deyve
     │               └── algorithmsjava
+    │                   ├── arrays
+    │                   │   └── Array.java
+    │                   ├── exceptions
+    │                   │   ├── Car.java
+    │                   │   └── Exceptions.java
     │                   ├── search
+    │                   │   ├── EqualsHashcode.java
     │                   │   └── Search.java
     │                   ├── stacks
     │                   │   └── Stack.java
+    │                   ├── streams
+    │                   │   ├── Function.java
+    │                   │   ├── Streams.java
+    │                   │   └── User.java
     │                   ├── strings
     │                   │   └── StringUtils.java
     │                   ├── trees
     │                   │   ├── Node.java
     │                   │   └── Tree.java
+    │                   ├── utils
+    │                   │   └── NumberUtils.java
     │                   └── vectors
     │                       └── Vector.java
     └── test
@@ -61,16 +85,22 @@
             └── dev
                 └── deyve
                     └── algorithmsjava
+                        ├── exceptions
+                        │   └── ExceptionsTest.java
                         ├── search
                         │   └── SearchTest.java
                         ├── stacks
                         │   └── StackTest.java
+                        ├── streams
+                        │   └── StreamsTest.java
                         ├── strings
                         │   └── StringUtilsTest.java
                         ├── trees
                         │   └── TreeTest.java
+                        ├── utils
+                        │   └── NumberUtilsTest.java
                         └── vectors
                             └── VectorTest.java
 
-21 directories, 15 files
+28 directories, 28 files
 ```

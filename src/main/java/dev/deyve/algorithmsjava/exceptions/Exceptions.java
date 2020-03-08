@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 public class Exceptions {
 
     /**
-     * Check object and throws IllegalArgumentException exception
+     * Check object and throws generic exception using Supplier
      *
      * @param obj               Object to check
      * @param exceptionSupplier Supplier Message
