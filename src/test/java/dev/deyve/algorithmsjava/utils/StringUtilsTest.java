@@ -1,4 +1,4 @@
-package dev.deyve.algorithmsjava.strings;
+package dev.deyve.algorithmsjava.utils;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static dev.deyve.algorithmsjava.strings.StringUtils.*;
+import static dev.deyve.algorithmsjava.utils.StringUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**

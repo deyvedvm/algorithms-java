@@ -1,4 +1,4 @@
-package dev.deyve.algorithmsjava.strings;
+package dev.deyve.algorithmsjava.utils;
 
 import java.util.*;
 import java.util.regex.Matcher;
