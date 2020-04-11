@@ -14,7 +14,7 @@ public class DateUtils {
      * @param zoneId        ZoneId
      * @return ZonedDateTime
      */
-    static ZonedDateTime getLocalDateTimeWithZoneId(LocalDateTime localDateTime, ZoneId zoneId) {
+    public static ZonedDateTime getLocalDateTimeWithZoneId(LocalDateTime localDateTime, ZoneId zoneId) {
 
         return localDateTime.atZone(zoneId);
     }
@@ -26,7 +26,7 @@ public class DateUtils {
      * @param zoneId        ZoneId
      * @return ZonedDateTime
      */
-    static ZonedDateTime getSameInstantOtherZone(ZonedDateTime zonedDateTime, ZoneId zoneId) {
+    public static ZonedDateTime getSameInstantOtherZone(ZonedDateTime zonedDateTime, ZoneId zoneId) {
 
         return zonedDateTime.withZoneSameInstant(zoneId);
     }
@@ -38,7 +38,7 @@ public class DateUtils {
      * @param endDate   LocalDate
      * @return Period
      */
-    static Period getPeriodBetweenTwoDates(LocalDate startDate, LocalDate endDate) {
+    public static Period getPeriodBetweenTwoDates(LocalDate startDate, LocalDate endDate) {
 
         return Period.between(startDate, endDate);
     }
