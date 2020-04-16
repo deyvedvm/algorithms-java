@@ -22,10 +22,11 @@ class DateUtilsTest {
         ZonedDateTime expectedResult = ZonedDateTime
                 .of(2020, 4, 11, 18, 14, 0, 0, ZoneId.of("America/Sao_Paulo"));
 
-        assertEquals(result, expectedResult);
+        assertEquals(result, expectedResult, "ZonedDateTime are different");
     }
 
     @Test
+    @DisplayName("Get the same time instant in another zone")
     void getSameInstantOtherZoneTest() {
         ZoneId mockZoneId = ZoneId.of("America/Toronto");
         ZonedDateTime mockZonedDateTime = ZonedDateTime
@@ -36,10 +37,11 @@ class DateUtilsTest {
         ZonedDateTime expectedResult = ZonedDateTime
                 .of(2020, 4, 11, 17, 14, 0, 0, ZoneId.of("America/Toronto"));
 
-        assertEquals(result, expectedResult);
+        assertEquals(result, expectedResult, "ZonedDateTime are different");
     }
 
     @Test
+    @DisplayName("Get Period of time between two LocalDates")
     void getPeriodBetweenTwoDatesTest() {
         LocalDate startDate = LocalDate.of(2000, 2, 15);
         LocalDate endDate = LocalDate.of(2020, 4, 11);
@@ -48,6 +50,6 @@ class DateUtilsTest {
 
         Period expectedResult = Period.of(20, 1, 27);
 
-        assertEquals(result, expectedResult);
+        assertEquals(result, expectedResult, "Period are different");
     }
 }
