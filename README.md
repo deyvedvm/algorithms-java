@@ -31,6 +31,12 @@
 - Sum of Integers
 - Sum of Integers with stream reduce
 
+### DateUtils
+
+- Get ZonedDateTime from LocalDateTime and ZoneId
+- Get the same time instant in another zone
+- Get Period of time between two LocalDates
+
 ### Tree
 
 ### Vector
@@ -45,62 +51,53 @@
 - Check object and throws generic exception using Supplier
 
 ```text
-├── docker-compose.yml
-├── Dockerfile
-├── java.iml
-├── LICENSE
-├── pom.xml
-├── README.md
-└── src
-    ├── main
-    │   └── java
-    │       └── dev
-    │           └── deyve
-    │               └── algorithmsjava
-    │                   ├── arrays
-    │                   │   └── Array.java
-    │                   ├── exceptions
-    │                   │   ├── Car.java
-    │                   │   └── Exceptions.java
-    │                   ├── search
-    │                   │   ├── EqualsHashcode.java
-    │                   │   └── Search.java
-    │                   ├── stacks
-    │                   │   └── Stack.java
-    │                   ├── streams
-    │                   │   ├── Function.java
-    │                   │   ├── Streams.java
-    │                   │   └── User.java
-    │                   ├── strings
-    │                   │   └── StringUtils.java
-    │                   ├── trees
-    │                   │   ├── Node.java
-    │                   │   └── Tree.java
-    │                   ├── utils
-    │                   │   └── NumberUtils.java
-    │                   └── vectors
-    │                       └── Vector.java
-    └── test
-        └── java
-            └── dev
-                └── deyve
-                    └── algorithmsjava
-                        ├── exceptions
-                        │   └── ExceptionsTest.java
-                        ├── search
-                        │   └── SearchTest.java
-                        ├── stacks
-                        │   └── StackTest.java
-                        ├── streams
-                        │   └── StreamsTest.java
-                        ├── strings
-                        │   └── StringUtilsTest.java
-                        ├── trees
-                        │   └── TreeTest.java
-                        ├── utils
-                        │   └── NumberUtilsTest.java
-                        └── vectors
-                            └── VectorTest.java
+├── main
+│   └── java
+│       └── dev
+│           └── deyve
+│               └── algorithmsjava
+│                   ├── exceptions
+│                   │   ├── Car.java
+│                   │   └── Exceptions.java
+│                   ├── search
+│                   │   ├── BubbleSort.java
+│                   │   └── Search.java
+│                   ├── stacks
+│                   │   └── Stack.java
+│                   ├── streams
+│                   │   ├── Streams.java
+│                   │   └── User.java
+│                   ├── trees
+│                   │   ├── Node.java
+│                   │   └── Tree.java
+│                   ├── utils
+│                   │   ├── DateUtils.java
+│                   │   ├── NumberUtils.java
+│                   │   └── StringUtils.java
+│                   └── vectors
+│                       └── Vector.java
+└── test
+    └── java
+        └── dev
+            └── deyve
+                └── algorithmsjava
+                    ├── exceptions
+                    │   └── ExceptionsTest.java
+                    ├── search
+                    │   ├── BubbleSortTest.java
+                    │   └── SearchTest.java
+                    ├── stacks
+                    │   └── StackTest.java
+                    ├── streams
+                    │   └── StreamsTest.java
+                    ├── trees
+                    │   └── TreeTest.java
+                    ├── utils
+                    │   ├── DateUtilsTest.java
+                    │   ├── NumberUtilsTest.java
+                    │   └── StringUtilsTest.java
+                    └── vectors
+                        └── VectorTest.java
 
-28 directories, 28 files
+24 directories, 23 files
 ```
