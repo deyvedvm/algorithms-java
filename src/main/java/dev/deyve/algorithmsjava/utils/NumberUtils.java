@@ -1,7 +1,10 @@
 package dev.deyve.algorithmsjava.utils;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Number Utils
@@ -38,4 +41,18 @@ public class NumberUtils {
         return integers.stream().reduce(0, Integer::sum);
     }
 
+    /**
+     * Count duplicate numbers
+     *
+     * @param numbers List of Numbers
+     * @return Number of duplicate numbers
+     */
+    static int countDuplicate(List<Integer> numbers) {
+        Set<Integer> uniqueNumbers = new HashSet<>();
+
+        return numbers.stream()
+                .filter(number -> !uniqueNumbers.add(number))
+                .collect(Collectors.toSet())
+                .size();
+    }
 }
