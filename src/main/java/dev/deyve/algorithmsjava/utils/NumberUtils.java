@@ -2,6 +2,8 @@ package dev.deyve.algorithmsjava.utils;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Number Utils
@@ -38,4 +40,10 @@ public class NumberUtils {
         return integers.stream().reduce(0, Integer::sum);
     }
 
+    static List<Integer> oddNumbers(int l , int r) {
+        return IntStream.range(l, r)
+                .filter(i -> i % 2 == 0)
+                .boxed()
+                .collect(Collectors.toList());
+    }
 }
