@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static dev.deyve.algorithmsjava.utils.NumberUtils.sumOfIntegers;
-import static dev.deyve.algorithmsjava.utils.NumberUtils.sumOfIntegersWithReduce;
+import static dev.deyve.algorithmsjava.utils.NumberUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NumberUtilsTest {
@@ -62,6 +61,34 @@ class NumberUtilsTest {
         Integer result = sumOfIntegersWithReduce(mockIntegers);
 
         Integer expectedResult = 20;
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("Count duplicate numbers ; should count duplicate numbers ; return the number of duplicate numbers ")
+    void countDuplicateTest() {
+
+        List<Integer> mockIntegers = List.of(2, 2, 3, 5, 5, 10);
+
+        Integer result = countDuplicate(mockIntegers);
+
+        Integer expectedResult = 2;
+
+        assertEquals(result, expectedResult);
+    }
+
+    @Test
+    @DisplayName("Count number occurrences ; should count number occurrences ; return the number of occurrences")
+    void getNumberOccurrencesTest() {
+
+        Integer valueMock = 5;
+
+        Integer[] mockIntegers = {2, 2, 3, 5, 5, 5, 10};
+
+        Integer result = getNumberOccurrences(mockIntegers, valueMock);
+
+        Integer expectedResult = 3;
 
         assertEquals(result, expectedResult);
     }

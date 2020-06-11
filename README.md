@@ -30,6 +30,7 @@
 
 - Sum of Integers
 - Sum of Integers with stream reduce
+- Count duplicate numbers
 
 ### DateUtils
 

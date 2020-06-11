@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Number Utils
@@ -45,5 +47,32 @@ public class NumberUtils {
                 .filter(i -> i % 2 == 0)
                 .boxed()
                 .collect(Collectors.toList());
+    }
+    /**
+     * Count duplicate numbers
+     *
+     * @param numbers List of Numbers
+     * @return Number of duplicate numbers
+     */
+    static int countDuplicate(List<Integer> numbers) {
+        Set<Integer> uniqueNumbers = new HashSet<>();
+
+        return numbers.stream()
+                .filter(number -> !uniqueNumbers.add(number))
+                .collect(Collectors.toSet())
+                .size();
+    }
+
+    /**
+     * Count Number Occurrences
+     *
+     * @param numbers Array of Integers
+     * @param value   Value to count
+     * @return Number occurrences
+     */
+    static Integer getNumberOccurrences(Integer[] numbers, Integer value) {
+        return (int) Arrays.stream(numbers)
+                .filter(number -> number.equals(value))
+                .count();
     }
 }
