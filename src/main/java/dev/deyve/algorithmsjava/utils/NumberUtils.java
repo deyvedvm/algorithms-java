@@ -1,9 +1,6 @@
 package dev.deyve.algorithmsjava.utils;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -54,5 +51,18 @@ public class NumberUtils {
                 .filter(number -> !uniqueNumbers.add(number))
                 .collect(Collectors.toSet())
                 .size();
+    }
+
+    /**
+     * Count Number Occurrences
+     *
+     * @param numbers Array of Integers
+     * @param value   Value to count
+     * @return Number occurrences
+     */
+    static Integer getNumberOccurrences(Integer[] numbers, Integer value) {
+        return (int) Arrays.stream(numbers)
+                .filter(number -> number.equals(value))
+                .count();
     }
 }

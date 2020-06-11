@@ -77,4 +77,19 @@ class NumberUtilsTest {
 
         assertEquals(result, expectedResult);
     }
+
+    @Test
+    @DisplayName("Count number occurrences ; should count number occurrences ; return the number of occurrences")
+    void getNumberOccurrencesTest() {
+
+        Integer valueMock = 5;
+
+        Integer[] mockIntegers = {2, 2, 3, 5, 5, 5, 10};
+
+        Integer result = getNumberOccurrences(mockIntegers, valueMock);
+
+        Integer expectedResult = 3;
+
+        assertEquals(result, expectedResult);
+    }
 }
