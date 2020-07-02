@@ -1,4 +1,4 @@
-package dev.deyve.algorithmsjava.search;
+package dev.deyve.algorithmsjava.sorting;
 
 import java.util.Arrays;
 
@@ -13,12 +13,11 @@ public class BubbleSort {
 
         System.out.println("Initial array: " + Arrays.toString(array));
 
-        for (int firstUnsortedIndex = 0; firstUnsortedIndex < array.length - 1; firstUnsortedIndex++) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 1; j < array.length - i; j++) {
 
-            for (int index = 0; index < array.length - firstUnsortedIndex - 1; index++) {
-
-                if (array[index] > array[index + 1]) {
-                    swap(array, index, index + 1);
+                if (array[j] < array[j - 1]) {
+                    swap(array, j, j - 1);
                 }
             }
         }

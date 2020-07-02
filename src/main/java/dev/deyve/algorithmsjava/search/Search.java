@@ -25,7 +25,7 @@ public class Search {
         return -1;
     }
 
-    public static <T extends Comparable<T>> Integer bubbleSort(List<T> array) {
+    public static <T extends Comparable<T>> T bubbleSort(List<T> array) {
 
         for (int lastUnsortedIndex = array.size() - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
 
