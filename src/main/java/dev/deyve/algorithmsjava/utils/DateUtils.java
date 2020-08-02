@@ -1,6 +1,7 @@
 package dev.deyve.algorithmsjava.utils;
 
 import java.time.*;
+import java.time.temporal.TemporalAdjuster;
 
 /**
  * Date Utils
@@ -41,5 +42,19 @@ public class DateUtils {
     public static Period getPeriodBetweenTwoDates(LocalDate startDate, LocalDate endDate) {
 
         return Period.between(startDate, endDate);
+    }
+
+    /**
+     * Add days to a date
+     *
+     * @param startDate Date
+     * @param days      Number of days
+     * @return New Date
+     */
+    public static LocalDate getDayAfterDays(LocalDate startDate, int days) {
+        Period period = Period.ofDays(days);
+        TemporalAdjuster temporalAdjuster = p -> p.plus(period);
+
+        return startDate.with(temporalAdjuster);
     }
 }

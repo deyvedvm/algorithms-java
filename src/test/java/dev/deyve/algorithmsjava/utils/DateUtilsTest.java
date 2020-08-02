@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 
 import static dev.deyve.algorithmsjava.utils.DateUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -43,8 +45,8 @@ class DateUtilsTest {
     @Test
     @DisplayName("Get Period of time between two LocalDates")
     void getPeriodBetweenTwoDatesTest() {
-        LocalDate startDate = LocalDate.of(2000, 2, 15);
-        LocalDate endDate = LocalDate.of(2020, 4, 11);
+        LocalDate startDate = LocalDate.of(2000, Month.FEBRUARY, 15);
+        LocalDate endDate = LocalDate.of(2020, Month.APRIL, 11);
 
         Period result = getPeriodBetweenTwoDates(startDate, endDate);
 
@@ -52,4 +54,39 @@ class DateUtilsTest {
 
         assertEquals(result, expectedResult, "Period are different");
     }
+
+    @Test
+    @DisplayName("Get Day After Days")
+    void getDayAfterDaysTest() {
+        LocalDate startDate = LocalDate.of(2020, Month.FEBRUARY, 15);
+
+        LocalDate result = getDayAfterDays(startDate, 15);
+
+        LocalDate expectedResult = LocalDate.of(2020, Month.MARCH, 1);
+
+        assertEquals(result, expectedResult, "LocalDate are different");
+    }
+
+    @Test
+    @DisplayName("Get Next Saturday")
+    void getNextSaturdayTest() {
+        LocalDate startDate = LocalDate.of(2020, Month.AUGUST, 2);
+
+        LocalDate result = startDate.with(NEXT_SATURDAY);
+
+        LocalDate expectedResult = LocalDate.of(2020, Month.AUGUST, 8);
+
+        assertEquals(result, expectedResult, "LocalDate are different");
+    }
+
+    private static final TemporalAdjuster NEXT_SATURDAY = TemporalAdjusters.ofDateAdjuster(today -> {
+        DayOfWeek dayOfWeek = today.getDayOfWeek();
+        if (dayOfWeek == DayOfWeek.SATURDAY) {
+            return today;
+        }
+        if (dayOfWeek == DayOfWeek.SUNDAY) {
+            return today.plusDays(6);
+        }
+        return today.plusDays(6 - dayOfWeek.getValue());
+    });
 }
