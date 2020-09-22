@@ -18,7 +18,7 @@ class SelectionSortTest {
 
         Integer[] expectedResult = {-22, -15, 1, 7, 20, 35, 55};
 
-        assertEquals(Arrays.toString(result), Arrays.toString(expectedResult));
+        assertEquals(Arrays.toString(expectedResult), Arrays.toString(result));
     }
 
 }

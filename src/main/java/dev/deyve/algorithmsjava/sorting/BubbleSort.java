@@ -28,6 +28,8 @@ public class BubbleSort {
 
         System.out.println("Total time: " + totalTime + " milliseconds");
 
+        System.out.println("Final array: " + Arrays.toString(array));
+
         return array;
     }
 

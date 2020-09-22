@@ -9,17 +9,19 @@ public class SelectionSort {
 
     public static Integer[] sort(Integer[] array) {
 
-        for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            int largest = 0;
+        System.out.println("Initial array: " + Arrays.toString(array));
 
-            for (int i = 0; i <= lastUnsortedIndex; i++) {
-                if (array[i] > array[largest]) {
-                    largest = i;
+        for (int i = 0; i < array.length; i++) {
+            var minIndex = i;
+            for (int j = i; j < array.length; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
                 }
-
             }
-            swap(array, largest, lastUnsortedIndex);
+            swap(array, minIndex, i);
         }
+
+        System.out.println("Final array: " + Arrays.toString(array));
 
         return array;
     }

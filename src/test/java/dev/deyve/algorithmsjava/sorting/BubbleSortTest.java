@@ -18,6 +18,6 @@ class BubbleSortTest {
 
         Integer[] expectedResult = {1, 2, 3, 3, 4, 6, 7};
 
-        assertEquals(Arrays.toString(result), Arrays.toString(expectedResult));
+        assertEquals(Arrays.toString(expectedResult), Arrays.toString(result));
     }
 }
