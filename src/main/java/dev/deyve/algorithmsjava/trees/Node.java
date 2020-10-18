@@ -1,8 +1,11 @@
 package dev.deyve.algorithmsjava.trees;
 
+import lombok.ToString;
+
 /**
  * Node
  */
+@ToString
 public class Node {
 
     protected Integer value;

@@ -1,8 +1,13 @@
 package dev.deyve.algorithmsjava.trees;
 
+import lombok.Getter;
+import lombok.ToString;
+
 /**
  * Tree
  */
+@ToString
+@Getter
 public class Tree {
 
     private Node root;
@@ -12,6 +17,7 @@ public class Tree {
 
         if (root == null) {
             this.root = node;
+            return;
         }
 
         var current = root;

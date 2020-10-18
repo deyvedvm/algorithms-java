@@ -1,58 +1,50 @@
 package dev.deyve.algorithmsjava.trees;
 
-import dev.deyve.algorithmsjava.trees.Tree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tree Test
  */
 class TreeTest {
 
+    Tree tree;
+
     @BeforeEach
     void setUp() {
+        tree = new Tree();
     }
 
     @Test
-    @DisplayName("Should call insert one time")
+    @DisplayName("Should insert 5 in the root node")
     void shouldInsertOneNodeWith() {
 
-        Tree mockTree = mock(Tree.class);
+        tree.insert(5);
 
-        mockTree.insert(5);
-
-        verify(mockTree, times(1)).insert(5);
+        assertEquals(tree.getRoot().value.toString(), "5");
     }
 
     @Test
-    @DisplayName("Should call insert two times")
+    @DisplayName("Should insert 3 in the left node")
     void shouldInsertTwoNodes() {
 
-        Tree mockTree = mock(Tree.class);
+        tree.insert(5);
+        tree.insert(3);
 
-        mockTree.insert(5);
-        mockTree.insert(3);
-
-        verify(mockTree, times(1)).insert(5);
-        verify(mockTree, times(1)).insert(3);
+        assertEquals(tree.getRoot().leftChild.value.toString(), "3");
     }
 
     @Test
-    @DisplayName("Should call insert three times")
+    @DisplayName("Should insert 8 in the right node")
     void shouldInsertThreeNodes() {
 
-        Tree mockTree = mock(Tree.class);
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(8);
 
-        mockTree.insert(5);
-        mockTree.insert(3);
-        mockTree.insert(8);
-
-        verify(mockTree, times(1)).insert(5);
-        verify(mockTree, times(1)).insert(3);
-        verify(mockTree, times(1)).insert(8);
+        assertEquals(tree.getRoot().rightChild.value.toString(), "8");
     }
-
 }
