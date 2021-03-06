@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Insertion Sort Test
  */
+@DisplayName("Insertion Sort Test")
 class InsertionSortTest {
 
     @Test

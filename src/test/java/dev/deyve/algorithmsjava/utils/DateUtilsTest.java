@@ -10,6 +10,10 @@ import java.time.temporal.TemporalAdjusters;
 import static dev.deyve.algorithmsjava.utils.DateUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Date Utils Test
+ */
+@DisplayName("Date Utils Test")
 class DateUtilsTest {
 
     @Test

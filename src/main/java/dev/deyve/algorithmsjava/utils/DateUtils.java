@@ -57,4 +57,12 @@ public class DateUtils {
 
         return startDate.with(temporalAdjuster);
     }
+
+    public static OffsetDateTime convertToOffsetDateTime(LocalDateTime localDateTime, String zoneIdString) {
+        ZoneId zoneId = ZoneId.of(zoneIdString);
+
+        ZoneOffset zoneOffset = zoneId.getRules().getOffset(localDateTime);
+
+        return OffsetDateTime.of(localDateTime, zoneOffset);
+    }
 }
