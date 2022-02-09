@@ -2,12 +2,14 @@ package dev.deyve.algorithmsjava.streams;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * Java 8+ Streams
  */
 public class Streams {
+
+    Streams() {
+    }
 
     /**
      * Sum values from Object
@@ -34,7 +36,7 @@ public class Streams {
         return stringList
                 .stream()
                 .filter(string -> string.startsWith(str))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -49,6 +51,6 @@ public class Streams {
         return stringList
                 .stream()
                 .filter(predicate)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

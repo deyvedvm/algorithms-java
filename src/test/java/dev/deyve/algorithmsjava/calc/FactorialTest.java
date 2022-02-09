@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Factorial Test")
 class FactorialTest {
 
     Factorial factorial;
@@ -17,7 +18,7 @@ class FactorialTest {
 
     @Test
     @DisplayName("calc factorial of 5")
-    public void factorialOfFiveTest() {
+    void factorialOfFiveTest() {
 
         int result = factorial.calc(5);
 
@@ -26,7 +27,7 @@ class FactorialTest {
 
     @Test
     @DisplayName("calc factorial of 9")
-    public void factorialOfNineTest() {
+    void factorialOfNineTest() {
 
         int result = factorial.calc(9);
 
@@ -35,7 +36,7 @@ class FactorialTest {
 
     @Test
     @DisplayName("calc factorial with recursion of 5")
-    public void factorialOfFiveRecursionTest() {
+    void factorialOfFiveRecursionTest() {
 
         int result = factorial.calcRecursion(5);
 
@@ -44,7 +45,7 @@ class FactorialTest {
 
     @Test
     @DisplayName("calc factorial with recursion of 9")
-    public void factorialOfNineRecursionTest() {
+    void factorialOfNineRecursionTest() {
 
         int result = factorial.calcRecursion(9);
 

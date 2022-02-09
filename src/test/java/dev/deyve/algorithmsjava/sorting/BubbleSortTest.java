@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("BubbleSort Test")
 class BubbleSortTest {
 
     @Test
