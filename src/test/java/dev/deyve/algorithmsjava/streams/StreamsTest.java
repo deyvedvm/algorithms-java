@@ -34,9 +34,7 @@ class StreamsTest {
 
         Integer result = sumValuesFromObject(users);
 
-        Integer expectedResult = 77;
-
-        assertEquals(result, expectedResult);
+        assertEquals(77, result);
     }
 
     @Test
@@ -49,7 +47,7 @@ class StreamsTest {
 
         List<String> result = filterStringList(mockStrings, mockString);
 
-        assertEquals(result, Arrays.asList("apples", "avocados", "apricots"));
+        assertEquals(Arrays.asList("apples", "avocados", "apricots"), result);
     }
 
     @Test
@@ -68,6 +66,6 @@ class StreamsTest {
 
         List<String> result = filterStringsWithPredicate(mockStrings, stringPredicate);
 
-        assertEquals(result, Arrays.asList("apples", "avocados", "apricots"));
+        assertEquals(Arrays.asList("apples", "avocados", "apricots"), result);
     }
 }
