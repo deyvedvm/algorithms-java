@@ -52,7 +52,7 @@ class BinarySearchTest {
     }
 
     @Test
-    @DisplayName("binarySearch ; should check if string not exists in array of List; return -1")
+    @DisplayName("binarySearch ; should check if string not exists in array of List ; return -1")
     void binarySearchListNotFoundTest() {
         List<String> words = Arrays.asList("January", "February", "March", "April", "May", "June", "July", "August",
                 "September", "October", "November", "December");
@@ -63,12 +63,22 @@ class BinarySearchTest {
     }
 
     @Test
-    @DisplayName("")
-    void binarySearchJava17() {
+    @DisplayName("binarySearch using Java 17 ; should check if number exists in array ; return index")
+    void binarySearchUsingJava17Found() {
         int[] numbers = {1, 2, 4, 5, 7, 9, 11};
 
-        int result = Arrays.binarySearch(numbers, 12);
+        int resultFound = Arrays.binarySearch(numbers, 5);
 
-        assertEquals(3, result);
+        assertEquals(3, resultFound);
+
+    }
+
+    @Test
+    @DisplayName("binarySearch using Java 17 ; should check if string not exists in array of List ; return -1")
+    void binarySearchUsingJava17NotFound() {
+        int[] numbers = {1, 2, 4, 5, 7, 9, 11};
+
+        int resultNotFound = Arrays.binarySearch(numbers, 12);
+        assertEquals(-8, resultNotFound);
     }
 }
