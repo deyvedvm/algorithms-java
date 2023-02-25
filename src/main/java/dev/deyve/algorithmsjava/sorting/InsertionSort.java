@@ -1,5 +1,8 @@
 package dev.deyve.algorithmsjava.sorting;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 
 /**
@@ -7,9 +10,11 @@ import java.util.Arrays;
  */
 public class InsertionSort {
 
+    private static final Logger logger = LoggerFactory.getLogger(InsertionSort.class);
+
     public static Integer[] sort(Integer[] array) {
 
-        System.out.println("Initial array: " + Arrays.toString(array));
+        logger.info("Initial array: {}", Arrays.toString(array));
 
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < array.length; firstUnsortedIndex++) {
 
@@ -24,7 +29,7 @@ public class InsertionSort {
             array[i] = newElement;
         }
 
-        System.out.println("Final array: " + Arrays.toString(array));
+        logger.info("Final array: {}", Arrays.toString(array));
 
         return array;
     }
