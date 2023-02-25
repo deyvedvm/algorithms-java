@@ -10,7 +10,6 @@ public class Factorial {
 
         for (int index = number; index > 1; index--) {
             factorial *= index;
-
         }
 
         return factorial;
@@ -18,9 +17,7 @@ public class Factorial {
 
     int calcRecursion(int number) {
         // Base condition
-        if (number == 0) {
-            return 1;
-        }
+        if (number == 0) return 1;
 
         return number * calcRecursion(number - 1);
     }
