@@ -1,5 +1,8 @@
 package dev.deyve.algorithmsjava.sorting;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -8,11 +11,13 @@ import java.util.Comparator;
  */
 public class BubbleSort {
 
+    private static final Logger logger = LoggerFactory.getLogger(BubbleSort.class);
+
     public static Integer[] sort(Integer[] array) {
 
         long initialTime = System.currentTimeMillis();
 
-        System.out.println("Initial array: " + Arrays.toString(array));
+        logger.info("Initial array: {}", Arrays.toString(array));
 
         for (var i = 0; i < array.length; i++) {
             for (var j = 1; j < array.length - i; j++) {
@@ -27,9 +32,9 @@ public class BubbleSort {
 
         long totalTime = finalTime - initialTime;
 
-        System.out.println("Total time: " + totalTime + " milliseconds");
+        logger.info("Total time:: {} milliseconds", totalTime);
 
-        System.out.println("Final array: " + Arrays.toString(array));
+        logger.info("Final array: {}", Arrays.toString(array));
 
         return array;
     }
@@ -54,6 +59,6 @@ public class BubbleSort {
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temporaryVariable;
 
-        System.out.println("Swap: " + Arrays.toString(array));
+        logger.info("Swap: {}", Arrays.toString(array));
     }
 }
