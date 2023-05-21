@@ -5,6 +5,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
+/**
+ * Quick Sort
+ */
 public class QuickSort {
 
     private static final Logger logger = LoggerFactory.getLogger(QuickSort.class);
