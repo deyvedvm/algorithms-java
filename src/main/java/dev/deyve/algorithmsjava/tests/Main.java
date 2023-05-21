@@ -1,5 +1,8 @@
 package dev.deyve.algorithmsjava.tests;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,28 +12,29 @@ import java.util.function.Function;
 
 public class Main {
 
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) throws FileNotFoundException {
 
         Function<Integer, Integer> incrementX = x -> x + 1;
 
-        System.out.println(incrementX.apply(5));
-
+        logger.info(String.valueOf(incrementX.apply(5)));
 
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         boolean anyEven = numbers.stream().anyMatch(number -> number % 2 == 0);
-        System.out.println(anyEven); // prints "true"
+        logger.info(String.valueOf(anyEven)); // prints "true"
 
-        System.out.println(Runtime.getRuntime().availableProcessors());
+        logger.info(String.valueOf(Runtime.getRuntime().availableProcessors()));
 
         int[] integers = new int[]{1, 5, 4, 9, 8, 3, 2};
         Arrays.sort(integers);
-        System.out.println(Arrays.toString(integers));
+        logger.info(Arrays.toString(integers));
 
         Melon[] melons = new Melon[]{new Melon("1", 15), new Melon("2", 10)};
 
         Arrays.parallelSort(melons, Comparator.comparingInt(Melon::getWeight).reversed());
 
-        System.out.println(Arrays.toString(melons));
+        logger.info(Arrays.toString(melons));
 
         int[] descIntegers = Arrays.stream(integers)
                 .boxed() //or .mapToObj(i -> i)
@@ -38,7 +42,7 @@ public class Main {
                 .mapToInt(Integer::intValue)
                 .toArray();
 
-        System.out.println(Arrays.toString(descIntegers));
+        logger.info(Arrays.toString(descIntegers));
     }
 
     public static String[] filterWords(String[] words, String letters) {
