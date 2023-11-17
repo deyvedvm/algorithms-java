@@ -4,11 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
         LinkedList<Integer> integers = new LinkedList<>();
-        integers.addLast(10);
+
+        integers.addFirst(10);
         integers.addLast(20);
         integers.addLast(30);
-        integers.addFirst(0);
-//        System.out.println(integers.indexOf(10));
+
+        System.out.println(integers.contains(10));
+        System.out.println(integers.indexOf(10));
         System.out.println(integers);
+
+        integers.reverse();
+        System.out.println(integers);
+
+        integers.removeFirst();
+        integers.removeLast();
+        System.out.println(integers);
+
     }
 }
