@@ -11,4 +11,11 @@ public class FizzBuzz {
                 .forEach(System.out::println);
 
     }
+
+    public static void fizzBuzz(int n) {
+        IntStream.rangeClosed(1, n)
+                .mapToObj(number -> number % 3 == 0 ? (number % 5 == 0 ? "FizzBuzz" : "Fizz") : (number % 5 == 0 ? "Buzz" : number))
+                .forEach(System.out::println);
+    }
+
 }

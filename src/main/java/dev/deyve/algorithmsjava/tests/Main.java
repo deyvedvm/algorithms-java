@@ -3,7 +3,6 @@ package dev.deyve.algorithmsjava.tests;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -14,7 +13,7 @@ public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         Function<Integer, Integer> incrementX = x -> x + 1;
 
@@ -32,7 +31,7 @@ public class Main {
 
         Melon[] melons = new Melon[]{new Melon("1", 15), new Melon("2", 10)};
 
-        Arrays.parallelSort(melons, Comparator.comparingInt(Melon::getWeight).reversed());
+        Arrays.parallelSort(melons, Comparator.comparingInt(Melon::weight).reversed());
 
         logger.info(Arrays.toString(melons));
 
